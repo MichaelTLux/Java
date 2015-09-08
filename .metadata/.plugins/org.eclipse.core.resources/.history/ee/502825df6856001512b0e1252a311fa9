@@ -23,13 +23,8 @@ public class StringTest
 		//Pulls out the first word by picking the
 		//Starting and ending points by hand
 		// then prints
-		String firstHalf= message.substring(0,5);
+		String firstHalf= message.substring(0,4);
 		System.out.println(firstHalf);
-		
-		//Using the replace method to change 
-		//instances of "o" to *
-		String replaceO=firstHalf.replace("o", "*");
-		System.out.println(replaceO);
 	}
 
 }
