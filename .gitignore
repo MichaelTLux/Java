@@ -15,6 +15,12 @@ tmp/
 *.snap
 *.resoures
 
+*~.log
+*~.zip
+*~.xmi
+*~.snap
+*~.resoures
+
 local.properties
 .settings/
 .loadpath
