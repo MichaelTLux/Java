@@ -14,12 +14,14 @@ tmp/
 *.xmi
 *.snap
 *.resoures
+*.index
 
 *~.log
 *~.zip
 *~.xmi
 *~.snap
 *~.resoures
+*~.index
 
 local.properties
 .settings/
