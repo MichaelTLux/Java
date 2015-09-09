@@ -19,8 +19,8 @@ public class BasketballTest
 		b.inflate();
 		
 		//print the results
-		System.out.println("Is the ball 2 bribbleable? " +b.isDribbleable());  // should be true now
-		System.out.println("Is the ball 1 bribbleable? " +b2.isDribbleable()); // should still be false 
+		System.out.println("Is the ball 1 bribbleable? " +b.isDribbleable());  // should be true now
+		System.out.println("Is the ball 2 bribbleable? " +b2.isDribbleable()); // should still be false 
 	}
 
 }
