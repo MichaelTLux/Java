@@ -1,5 +1,6 @@
 *.pydevproject
 .metadata
+.metadata/
 .gradle
 bin/
 tmp/
@@ -15,6 +16,11 @@ tmp/
 *.snap
 *.resoures
 *.index
+
+.metadata/.mylyn/.tasks.xml.zip
+.metadata/.mylyn/tasks.xml.zip
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+
 
 *~.log
 *~.zip
