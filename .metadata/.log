@@ -209,3 +209,111 @@ java.net.UnknownHostException: www.codetrails.com: unknown error
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2015-09-09 14:20:43.417
 !MESSAGE No repository found at file:/Users/LocalUser/Downloads/Eclipse.app/Contents/Eclipse/.eclipseextension.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2015-09-09 14:39:15.473
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2015-09-09 14:39:15.474
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.474
+!MESSAGE Software being installed: Code Recommenders Snipmatch Editor Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp.feature.feature.group 0.3.0.v20150418-0407)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.474
+!MESSAGE Missing requirement: Xtend Runtime Library 2.7.3.v201411190455 (org.eclipse.xtend.lib 2.7.3.v201411190455) requires 'bundle org.eclipse.xtend.lib.macro 2.7.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.474
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.474
+!MESSAGE From: Code Recommenders Template Editor Snipmatch Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp 0.3.0.v20150418-0407)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.474
+!MESSAGE To: bundle org.eclipse.xtext.ui 0.0.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.474
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.474
+!MESSAGE From: Code Recommenders Snipmatch Editor Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp.feature.feature.group 0.3.0.v20150418-0407)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.474
+!MESSAGE To: org.eclipse.recommenders.templates.snipmatch.rcp [0.3.0.v20150418-0407]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.474
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.474
+!MESSAGE From: Xtext UI Core 2.7.3.v201411190455 (org.eclipse.xtext.ui 2.7.3.v201411190455)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.474
+!MESSAGE To: bundle org.eclipse.xtend.lib [2.7.0,3.0.0)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2015-09-09 14:39:15.549
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2015-09-09 14:39:15.549
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.549
+!MESSAGE Software being installed: Code Recommenders Snipmatch Editor Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp.feature.feature.group 0.3.0.v20150418-0407)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.549
+!MESSAGE Missing requirement: Xtend Runtime Library 2.7.3.v201411190455 (org.eclipse.xtend.lib 2.7.3.v201411190455) requires 'bundle org.eclipse.xtend.lib.macro 2.7.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.549
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.549
+!MESSAGE From: Code Recommenders Template Editor Snipmatch Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp 0.3.0.v20150418-0407)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.549
+!MESSAGE To: bundle org.eclipse.xtext.ui 0.0.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.549
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.549
+!MESSAGE From: Code Recommenders Snipmatch Editor Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp.feature.feature.group 0.3.0.v20150418-0407)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.549
+!MESSAGE To: org.eclipse.recommenders.templates.snipmatch.rcp [0.3.0.v20150418-0407]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.549
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.549
+!MESSAGE From: Xtext UI Core 2.7.3.v201411190455 (org.eclipse.xtext.ui 2.7.3.v201411190455)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.549
+!MESSAGE To: bundle org.eclipse.xtend.lib [2.7.0,3.0.0)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2015-09-09 14:39:15.605
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2015-09-09 14:39:15.605
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.605
+!MESSAGE Software being installed: Code Recommenders Snipmatch Editor Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp.feature.feature.group 0.3.0.v20150418-0407)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.605
+!MESSAGE Missing requirement: Xtend Runtime Library 2.7.3.v201411190455 (org.eclipse.xtend.lib 2.7.3.v201411190455) requires 'bundle org.eclipse.xtend.lib.macro 2.7.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.605
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.605
+!MESSAGE From: Code Recommenders Template Editor Snipmatch Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp 0.3.0.v20150418-0407)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.605
+!MESSAGE To: bundle org.eclipse.xtext.ui 0.0.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.605
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.606
+!MESSAGE From: Code Recommenders Snipmatch Editor Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp.feature.feature.group 0.3.0.v20150418-0407)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.606
+!MESSAGE To: org.eclipse.recommenders.templates.snipmatch.rcp [0.3.0.v20150418-0407]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.606
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.606
+!MESSAGE From: Xtext UI Core 2.7.3.v201411190455 (org.eclipse.xtext.ui 2.7.3.v201411190455)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.606
+!MESSAGE To: bundle org.eclipse.xtend.lib [2.7.0,3.0.0)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 10053 2015-09-09 14:39:15.612
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 10053 2015-09-09 14:39:15.613
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.613
+!MESSAGE Software being installed: Code Recommenders Snipmatch Editor Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp.feature.feature.group 0.3.0.v20150418-0407)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.613
+!MESSAGE Missing requirement: Xtend Runtime Library 2.7.3.v201411190455 (org.eclipse.xtend.lib 2.7.3.v201411190455) requires 'bundle org.eclipse.xtend.lib.macro 2.7.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.613
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.613
+!MESSAGE From: Code Recommenders Template Editor Snipmatch Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp 0.3.0.v20150418-0407)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.613
+!MESSAGE To: bundle org.eclipse.xtext.ui 0.0.0
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.613
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.613
+!MESSAGE From: Code Recommenders Snipmatch Editor Extension (Incubator) 0.3.0.v20150418-0407 (org.eclipse.recommenders.templates.snipmatch.rcp.feature.feature.group 0.3.0.v20150418-0407)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.613
+!MESSAGE To: org.eclipse.recommenders.templates.snipmatch.rcp [0.3.0.v20150418-0407]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2015-09-09 14:39:15.613
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.613
+!MESSAGE From: Xtext UI Core 2.7.3.v201411190455 (org.eclipse.xtext.ui 2.7.3.v201411190455)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.613
+!MESSAGE To: bundle org.eclipse.xtend.lib [2.7.0,3.0.0)
