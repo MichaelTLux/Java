@@ -22,5 +22,15 @@ public class AtomTest
 		System.out.println("The new atom mass is " + atom1.getAtomicMass()+ ".");
 		System.out.println("The new atomic charge is " +atom1.getAtomicCharge()+ ".");
 		
+		//decay to change values
+				atom1.decay();
+				System.out.println();
+				System.out.println("The atom has decayed.");
+				System.out.println();
+				
+		//print new results
+		System.out.println("The new atom mass is " + atom1.getAtomicMass()+ ".");
+		System.out.println("The new atomic charge is " +atom1.getAtomicCharge()+ ".");
+		
 	}
 }
