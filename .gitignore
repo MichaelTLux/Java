@@ -8,11 +8,12 @@ tmp/
 *.swp
 *~.nib
 
-//
+
 *.log
 *.zip
 *.xmi
-//
+*.snap
+*.resoures
 
 local.properties
 .settings/
