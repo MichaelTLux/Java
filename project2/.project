@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>.settings/lab2</name>
-			<type>2</type>
-			<location>/Users/LocalUser/Desktop/Eclipse/SourceTree/project2/lab2</location>
-		</link>
-	</linkedResources>
 </projectDescription>
