@@ -317,3 +317,13 @@ java.net.UnknownHostException: www.codetrails.com: unknown error
 !MESSAGE From: Xtext UI Core 2.7.3.v201411190455 (org.eclipse.xtext.ui 2.7.3.v201411190455)
 !SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2015-09-09 14:39:15.613
 !MESSAGE To: bundle org.eclipse.xtend.lib [2.7.0,3.0.0)
+!SESSION 2015-09-09 20:44:36.039 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/LocalUser/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/LocalUser/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 20:44:42.515
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

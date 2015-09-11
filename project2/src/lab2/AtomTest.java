@@ -22,6 +22,7 @@ public class AtomTest
 		System.out.println("The new atom mass is " + atom1.getAtomicMass()+ ".");
 		System.out.println("The new atomic charge is " +atom1.getAtomicCharge()+ ".");
 		
+		System.out.println("");
 		
 	}
 }
