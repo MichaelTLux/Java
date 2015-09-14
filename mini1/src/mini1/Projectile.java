@@ -24,7 +24,7 @@ public class Projectile {
 		isAlive=true;
 	}
 	
-	public boolean collides()
+	public boolean collides(Projectile givenprojectile)
 	{
 		//todo
 		return false;
@@ -35,10 +35,12 @@ public class Projectile {
 		return ageOfObject;
 	}
 	
-	public java.awt.Rectangle getBondingBox()
+	public java.awt.Rectangle getBoundingBox()
 	{
-		Rectangle bondingBox= new Rectangle(sizeOfObject,sizeOfObject);
-		return bondingBox;
+		int roundedX = (int) Math.round(positionX);
+		int roundedY = (int) Math.round(positionY);
+		Rectangle boundingBox= new Rectangle(roundedX,roundedY,sizeOfObject , sizeOfObject);
+		return boundingBox;
 	}
 	
 	public double getVelocityX()
@@ -82,7 +84,7 @@ public class Projectile {
 	{
 		positionY=positionY+velocityY;
 		positionX=positionX+velocityX;
-		velocityX=velocityX+gravity;
+		velocityY=velocityY+gravity;
 		ageOfObject=ageOfObject+1;	
 	}
 }
