@@ -4,7 +4,7 @@
 	<section name="javadoc">
 		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project2/javadoc.xml" key="antpath"/>
+		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/mini1/javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="true" key="author"/>
@@ -18,9 +18,34 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project2/doc" key="destdir"/>
+		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/mini1/doc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
+			<section name="project2">
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project2/javadoc.xml" key="antpath"/>
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project2/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="project1">
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project1/javadoc.xml" key="antpath"/>
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project1/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="SkillsTraining">
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/SkillsTraining/javadoc.xml" key="antpath"/>
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/SkillsTraining/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="mini1">
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/mini1/javadoc.xml" key="antpath"/>
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/mini1/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="RemoteSystemsTempFiles">
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/RemoteSystemsTempFiles/javadoc.xml" key="antpath"/>
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/RemoteSystemsTempFiles/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 		</section>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
