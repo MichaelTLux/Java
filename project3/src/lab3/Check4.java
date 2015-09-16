@@ -13,8 +13,8 @@ public class Check4
 				i=Integer.MAX_VALUE;
 				i=i+2;
 				System.out.println("After adding 2 to max "+ i);
-				i=Integer.MAX_VALUE+Integer.MIN_VALUE;
-				System.out.println("After adding min and max " + i);
+				i=Integer.MAX_VALUE+Integer.MAX_VALUE;
+				System.out.println("After adding max and max " + i);
 	}
 
 }

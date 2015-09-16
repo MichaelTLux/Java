@@ -6,7 +6,7 @@ import java.util.Random;
  * A RabbitModel is used to simulate the growth
  * of a population of rabbits. 
  */
-public class RabbitModel
+public class RabbitModel5
 {
   // TODO - add instance variables as needed
   private int populationOfRabbits;
@@ -17,7 +17,7 @@ public class RabbitModel
   /**
    * Constructs a new RabbitModel.
    */
-  public RabbitModel()
+  public RabbitModel5()
   {
     this.reset();
   }  

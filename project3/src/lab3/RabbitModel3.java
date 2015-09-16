@@ -1,23 +1,23 @@
 package lab3;
 
-import java.util.Random;
-
 /**
  * A RabbitModel is used to simulate the growth
  * of a population of rabbits. 
  */
-public class RabbitModel
+public class RabbitModel3
 {
   // TODO - add instance variables as needed
-  private int populationOfRabbits;
+  int populationOfRabbits;
   
-  private Random rand= new Random(7);
+  int lastYearPopulation;
+  
+  int twoYearAgoPopulation;
 	
 	
   /**
    * Constructs a new RabbitModel.
    */
-  public RabbitModel()
+  public RabbitModel3()
   {
     this.reset();
   }  
@@ -38,7 +38,7 @@ public class RabbitModel
    */
   public void simulateYear()
   {
-	  populationOfRabbits=populationOfRabbits+rand.nextInt(11);
+	  populationOfRabbits=populationOfRabbits%5+1;
 }
   
   /**
@@ -47,6 +47,6 @@ public class RabbitModel
    */
   public void reset()
   {
-	  populationOfRabbits=0;
+	  populationOfRabbits=1;
   }
 }
