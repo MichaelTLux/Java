@@ -29,8 +29,8 @@ public class AtomReader
 	     int electronCount = parser2.nextInt();
 	     int neutronCount = parser2.nextInt();
 
-	  Atom u238 = new Atom(protonCount, neutronCount, electronCount);
-	  System.out.println(u238);
+	     Atom u238 = new Atom(protonCount, neutronCount, electronCount);
+	     System.out.println(u238);
 	  }
 
 }

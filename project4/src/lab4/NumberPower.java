@@ -11,6 +11,7 @@ public class NumberPower
 	    
 	    boolean flag1=false;
 	    
+	    
 	    System.out.println("This program will take one number to the power of the other.");
 	    System.out.println("Please enter only integers");
 	    System.out.println("Please enter your base");
@@ -31,7 +32,7 @@ public class NumberPower
 	    
 	    int exponent=scanner.nextInt();
 	    int result= (int) Math.pow(base, exponent);
-	    System.out.println("The results for " + base + "^" + exponent + " equals: " + result);
+	    System.out.println("The results for " + base + "^" + exponent + " equals: " + result + ".");
 	   
 	}
 	
