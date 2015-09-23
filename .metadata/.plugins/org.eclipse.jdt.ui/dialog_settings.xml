@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project2/bin/lab2" key="org.eclipse.jdt.ui.last.external.project"/>
 	<section name="javadoc">
-		<item value="private" key="access"/>
+		<item value="public" key="access"/>
 		<item value="false" key="noindex"/>
 		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork#1/javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
@@ -18,7 +18,7 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork#1/doc" key="destdir"/>
+		<item value="/Users/LocalUser/Desktop" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
 			<section name="project2">
@@ -28,7 +28,7 @@
 			</section>
 			<section name="homeWork#1">
 				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork#1/javadoc.xml" key="antpath"/>
-				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork#1/doc" key="destdir"/>
+				<item value="/Users/LocalUser/Desktop" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="project1">
