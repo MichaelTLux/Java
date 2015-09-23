@@ -41,7 +41,6 @@ public class Turnstile {
 	}
 	
 	/**
-	 * Change this once its written
 	 * Attempts to put the ticket into transit, however, first it runs a few tests.
 	 * If the ticket is already in transit, it attempts to charge the person first based
 	 * on their location. If there isn't enough money on the ticket, false is returned.
@@ -83,7 +82,11 @@ public class Turnstile {
 	}
 	
 	/**
-	 * redo once it works
+	 * Attempts to charge the ticket for the fare based on start and end zone. 
+	 * If this transaction is successful (the balance is large enough for the fare)
+	 * then the fare is subtracted from the account balance and true is returned.
+	 * Also the card is taken out of transit. However, if there isn't enough balance on
+	 * the card, nothing is edited and false is returned.
 	 * @param ticket
 	 * 	the ticket that is being used for the transaction
 	 * @return

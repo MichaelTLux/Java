@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project2/bin/lab2" key="org.eclipse.jdt.ui.last.external.project"/>
 	<section name="javadoc">
-		<item value="public" key="access"/>
+		<item value="private" key="access"/>
 		<item value="false" key="noindex"/>
-		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project3/javadoc.xml" key="antpath"/>
+		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork#1/javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="true" key="use"/>
 		<item value="true" key="author"/>
@@ -18,7 +18,7 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project3/doc" key="destdir"/>
+		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork#1/doc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
 			<section name="project2">
@@ -26,9 +26,19 @@
 				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project2/doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
+			<section name="homeWork#1">
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork#1/javadoc.xml" key="antpath"/>
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork#1/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 			<section name="project1">
 				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project1/javadoc.xml" key="antpath"/>
 				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project1/doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="project4">
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project4/javadoc.xml" key="antpath"/>
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project4/doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="project3">
@@ -65,7 +75,7 @@
 		<item value="true" key="create_unimplemented"/>
 	</section>
 	<section name="ClasspathContainerSelectionPage">
-		<item value="3" key="index"/>
+		<item value="4" key="index"/>
 	</section>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
@@ -76,10 +86,10 @@
 	<section name="quick_assist_proposal_size">
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="0" key="pageIndex"/>
+		<item value="1" key="pageIndex"/>
 	</section>
 	<section name="JavadocWizardDialog">
-		<item value="600" key="DIALOG_WIDTH"/>
+		<item value="834" key="DIALOG_WIDTH"/>
 		<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
 		<item value="534" key="DIALOG_HEIGHT"/>
 		<item value="212" key="DIALOG_X_ORIGIN"/>
