@@ -45,7 +45,7 @@ public class TicketMachine {
 	 *  and false is there isn't
 	 * @return
 	 * 	A ticket with the amount for the trip specified by
-	 * 	the parameters given, using the TicketUtil.
+	 * 	the parameters given, using TicketUtil.
 	 */
 	public Ticket purchaseTicket(int startZone, int endZone, boolean discounted)
 	{
@@ -72,7 +72,7 @@ public class TicketMachine {
 	 *  and false is there isn't
 	 * @return
 	 * 	A ticket with the amount for the trips specified by
-	 * 	the parameters given, using the TicketUtil.
+	 * 	the parameters given, using TicketUtil.
 	 */
 	public Ticket purchaseTicket(int numRides, int startZone, int endZone, boolean discounted)
 	{
@@ -85,15 +85,15 @@ public class TicketMachine {
 	
 	/**
 	 * Allows a user to purchase a ticket with a desired amount
-	 * on it. This ticket will also keep tract of a discount
+	 * on it. This ticket will also keep track of a discount
 	 * for fares if relevant.
 	 * @param amount
-	 * 	the amount (in cents) that is desired to be on the card
+	 * 	the amount (in cents) that is desired to be on the ticket
 	 * @param discounted
 	 * 	whether or not the user has a discount. True if there is
 	 *  and false is there isn't
 	 * @return
-	 * A ticket with the amount specified.
+	 * A ticket with the amount (in cents) specified.
 	 */
 	public Ticket purchaseTicket(int amount, boolean discounted)
 	{

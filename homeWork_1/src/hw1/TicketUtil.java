@@ -43,16 +43,16 @@ public class TicketUtil {
 		}
 		
 		/**
-		 * Calculates the cost of a ride (in pennies) from a start zone to an end zone, taking into account
+		 * Calculates the cost of a ride (in cents) from a start zone to an end zone, taking into account
 		 * if the ticket has a discount or not.
 		 * @param startZone
 		 * 	this is where the ticket is swiped in on a turnstile
 		 * @param endZone
 		 * 	this is where the ticket is swiped out on a turnstile
 		 * @param discounted
-		 * 	this is whether or not the card is a discount card
+		 * 	this is whether or not the ticket is a discount ticket
 		 * @return
-		 * 	this will return the total cost (in pennies) of the ride
+		 * 	this will return the total cost (in cents) of the ride
 		 */
 		public static int calculateRideCost(int startZone, int endZone,boolean discounted)
 		{
@@ -73,7 +73,7 @@ public class TicketUtil {
 		}
 		
 		/**
-		 * Calculates the cost of a ride (in pennies) from a start zone to an end zone, taking into account
+		 * Calculates the cost of a ride (in cents) from a start zone to an end zone, taking into account
 		 * if the ticket has a discount or not, and then multiplies it by the desired number of rides.
 		 * @param numRides
 		 * 	the number of desired rides between the desired zones
@@ -82,9 +82,9 @@ public class TicketUtil {
 		 * @param endZone
 		 * 	this is where the ticket is swiped out on a turnstile
 		 * @param discounted
-		 * 	this is whether or not the card is a discount card
+		 * 	this is whether or not the ticket is a discount ticket
 		 * @return
-		 * 	this will return the total cost (in pennies) of the ride
+		 * 	this will return the total cost (in cents) of the ride
 		 */
 		public static int calculateRideCost(int numRides, int startZone, int endZone, boolean discounted)
 		{
@@ -106,7 +106,7 @@ public class TicketUtil {
 		}
 		
 		/**
-		 * Checks the if a card is discounted or not, then returns the appropriate minimum fare
+		 * Checks if a ticket is discounted or not, then returns the appropriate minimum fare
 		 * for that particular ticket. 
 		 * @param discounted
 		 * 	whether or not that particular ticket gets discounts or not

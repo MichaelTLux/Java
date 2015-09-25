@@ -12,7 +12,7 @@ package hw1;
 public class Ticket 
 {
 	/**
-	 * The total amount of money (in pennies) on the ticket
+	 * The total amount of money (in cents) on the ticket
 	 */
 	private int balanceOfTicket;
 	
@@ -38,9 +38,9 @@ public class Ticket
 	 * stores the presence of a discount. The ticket starts out without
 	 * a trip in progress and with an invalid smart zone.
 	 * @param givenBalance
-	 * 	the total amount (in pennies) that is to be present on the card
+	 * 	the total amount (in cents) that is to be present on the ticket
 	 * @param discounted
-	 * 	whether or not there is a discount on the card. True if there is and false if there isn't.
+	 * 	whether or not there is a discount on the ticket. True if there is and false if there isn't.
 	 */
 	public Ticket(int givenBalance, boolean discounted)
 	{
@@ -58,7 +58,7 @@ public class Ticket
 	 * Starts the trip for the ticket and stores the given Smart Zone.
 	 * Subsequent calls of the ticket will say it is in a trip.
 	 * @param zone
-	 * 	the smart zone the ticket was used at
+	 * 	the smart zone the ticket was used at to begin trip
 	 */
 	public void beginTrip(int zone)
 	{
@@ -69,7 +69,7 @@ public class Ticket
 	/**
 	 * Returns the smart zone from which the ticket was originally used at for that ticket
 	 * @return
-	 * 	the smart zone the ticket was originally used at
+	 * 	the smart zone the ticket was originally used at to start the trip
 	 */
 	public int getStartZone()
 	{
@@ -77,7 +77,7 @@ public class Ticket
 	}
 	
 	/**
-	 * Tells is the current ticket is discounted or not. True if there is and false if there isn't.
+	 * Tells if the current ticket is discounted or not. True if it is and false if it isn't.
 	 * @return
 	 * 	the presence of a discount, true if there is and false if there isn't.
 	 */
@@ -87,9 +87,9 @@ public class Ticket
 	}
 	
 	/**
-	 * Returns how much money is left on a ticket (in pennies)
+	 * Returns how much money is left on a ticket (in cents)
 	 * @return
-	 * 	the amount left on the card in pennies
+	 * 	the amount left on the ticket in cents
 	 */
 	public int getBalance()
 	{
@@ -103,7 +103,7 @@ public class Ticket
 	 * @param rideCost
 	 * 	the total cost of the ride
 	 * @return
-	 * 	True if the transaction was successful false if it wasn't.
+	 * 	True is returned if the transaction was successful, false if it wasn't.
 	 */
 	public boolean charge(int rideCost)
 	{
@@ -121,10 +121,10 @@ public class Ticket
 	}
 	
 	/**
-	 * Tells whether or not the ticket has been swiped in successfully (True), or if it has been successfully
+	 * Tells whether or not the ticket has been swiped in successfully (true), or if it has been successfully
 	 *  swiped out (false). If the ticket has not been used it will return false.
 	 * @return
-	 * 	the swiped in our out status. True if swiped in successfully or false if swiped out successfully.
+	 * 	the swiped in or out status. True if swiped in successfully or false if swiped out successfully.
 	 * 	Will return false if ticket has not been used
 	 */
 	public boolean isInTransit() 

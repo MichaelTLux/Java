@@ -22,7 +22,7 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="/Users/LocalUser/Desktop/hw" key="destdir"/>
+		<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork_1/doc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
 			<section name="project2">
@@ -57,7 +57,7 @@
 			</section>
 			<section name="homeWork_1">
 				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork_1/javadoc.xml" key="antpath"/>
-				<item value="/Users/LocalUser/Desktop/hw" key="destdir"/>
+				<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/homeWork_1/doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 			<section name="RemoteSystemsTempFiles">
