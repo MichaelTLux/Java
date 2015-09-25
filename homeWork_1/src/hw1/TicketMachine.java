@@ -6,7 +6,7 @@ package hw1;
  *  and their prices depending on different parameters including: number of 
  *  trips, amount desired on ticked, starting zones, and ending zones.
  *  Additionally, discounts are included in these calculations, if relevant. 
- * @author Michael Lux Section 14 Professor Kautz
+ * @author Michael Lux
  *
  */
 public class TicketMachine {

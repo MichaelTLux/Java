@@ -3,7 +3,7 @@ package hw1;
 /**
  * This is the utility class for the Ticket System. It run calculations for ticket fairs and
  * holds the values of all the FINAL values of the system.
- * @author Michael Lux Section 14 Professor Kautz 
+ * @author Michael Lux
  *
  */
 public class TicketUtil {
@@ -39,7 +39,7 @@ public class TicketUtil {
 		 */
 		private TicketUtil()
 		{
-			//ask if this needs anything
+			
 		}
 		
 		/**
@@ -88,7 +88,6 @@ public class TicketUtil {
 		 */
 		public static int calculateRideCost(int numRides, int startZone, int endZone, boolean discounted)
 		{
-			//TODO
 			int zonesTraveledThrough=Math.abs(startZone-endZone);
 			
 			if (discounted==true)
@@ -119,7 +118,6 @@ public class TicketUtil {
 			{
 				return RIDE_COST_DISCOUNTED;
 			}
-			//technically extra so ask TA for both question and below
 			else
 			{
 				return RIDE_COST;

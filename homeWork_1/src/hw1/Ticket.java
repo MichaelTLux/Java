@@ -6,7 +6,7 @@ package hw1;
  * up. It allows access to the location, balance, presence of a discount,
  *  and presence of a trip. With this ticket you can also charge money
  *  against the balance and start a trip.
- * @author Michael Lux Section 14 Professor Kautz 
+ * @author Michael Lux
  *
  */
 public class Ticket 

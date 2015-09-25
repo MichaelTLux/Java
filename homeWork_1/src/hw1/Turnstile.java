@@ -5,7 +5,7 @@ package hw1;
  * in the transportation network. It includes the zone the turnstile
  * exists at. It allows tickets to be swiped in and out so that
  * cost of rides can be calculated.
- * @author Michael Lux Section 14 Professor Kautz
+ * @author Michael Lux
  *
  */
 public class Turnstile {
@@ -56,8 +56,6 @@ public class Turnstile {
 	 */
 	public boolean swipeIn(Ticket ticket)
 	{
-		//to do
-		//not needed, is it okay
 		if (ticket.isInTransit()==true)
 		{
 			if (ticket.getBalance()>TicketUtil.calculateRideCost(ticket.getStartZone(), zoneOfTurnstile, ticket.isDiscounted()))
@@ -75,7 +73,6 @@ public class Turnstile {
 			numberEntered=numberEntered+1;
 			return true;
 		}
-		//not needed and ask
 		else
 		{
 			return false;
@@ -95,7 +92,6 @@ public class Turnstile {
 	 */
 	public boolean swipeOut(Ticket ticket)
 	{
-		//TODO 
 			if (ticket.getBalance()>TicketUtil.calculateRideCost(ticket.getStartZone(), zoneOfTurnstile, ticket.isDiscounted()))
 			{
 				ticket.charge(TicketUtil.calculateRideCost(ticket.getStartZone(), zoneOfTurnstile, ticket.isDiscounted()));
