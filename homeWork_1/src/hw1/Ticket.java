@@ -1,4 +1,5 @@
 package hw1;
+
 /**
  * This class encapsulates information in a ticket which includes 
  * the balance of the ticket, the presence of a discount, whether 
@@ -107,7 +108,7 @@ public class Ticket
 	 */
 	public boolean charge(int rideCost)
 	{
-		if (balanceOfTicket>rideCost)
+		if (balanceOfTicket>=rideCost)
 		{
 			currentSmartZone=TicketUtil.INVALID_ZONE;
 			tripInProgress=false;

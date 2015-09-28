@@ -56,18 +56,19 @@ public class Turnstile {
 	 */
 	public boolean swipeIn(Ticket ticket)
 	{
-		if (ticket.isInTransit()==true)
+		if (ticket.isInTransit())
 		{
-			if (ticket.getBalance()>TicketUtil.calculateRideCost(ticket.getStartZone(), zoneOfTurnstile, ticket.isDiscounted()))
+			if (ticket.getBalance()>=TicketUtil.calculateRideCost(ticket.getStartZone(), zoneOfTurnstile, ticket.isDiscounted()))
 			{
 				ticket.charge(TicketUtil.calculateRideCost(ticket.getStartZone(), zoneOfTurnstile, ticket.isDiscounted()));
+				numberExited=numberExited+1;
 			}
 			else
 			{
 				return false;
 			}
 		}
-		if (ticket.getBalance()>TicketUtil.getMinimumFare(ticket.isDiscounted()))
+		if (ticket.getBalance()>=TicketUtil.getMinimumFare(ticket.isDiscounted()))
 		{
 			ticket.beginTrip(zoneOfTurnstile);
 			numberEntered=numberEntered+1;
@@ -92,7 +93,7 @@ public class Turnstile {
 	 */
 	public boolean swipeOut(Ticket ticket)
 	{
-			if (ticket.getBalance()>TicketUtil.calculateRideCost(ticket.getStartZone(), zoneOfTurnstile, ticket.isDiscounted()))
+			if (ticket.getBalance()>=TicketUtil.calculateRideCost(ticket.getStartZone(), zoneOfTurnstile, ticket.isDiscounted()))
 			{
 				ticket.charge(TicketUtil.calculateRideCost(ticket.getStartZone(), zoneOfTurnstile, ticket.isDiscounted()));
 				numberExited=numberExited+1;

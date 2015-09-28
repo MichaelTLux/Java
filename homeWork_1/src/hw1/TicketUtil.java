@@ -39,7 +39,7 @@ public class TicketUtil {
 		 */
 		private TicketUtil()
 		{
-			
+		//empty	
 		}
 		
 		/**
@@ -58,7 +58,7 @@ public class TicketUtil {
 		{
 			int zonesTraveledThrough=Math.abs(startZone-endZone);
 			
-			if (discounted==true)
+			if (discounted)
 			{
 				int throughZoneTravel=(zonesTraveledThrough*ZONE_COST_DISCOUNTED);
 				int totalRideCost=throughZoneTravel+RIDE_COST_DISCOUNTED;
@@ -90,7 +90,7 @@ public class TicketUtil {
 		{
 			int zonesTraveledThrough=Math.abs(startZone-endZone);
 			
-			if (discounted==true)
+			if (discounted)
 			{
 				int throughZoneTravel=(zonesTraveledThrough*ZONE_COST_DISCOUNTED);
 				int totalRideCost=(throughZoneTravel+RIDE_COST_DISCOUNTED)*numRides;
@@ -114,7 +114,7 @@ public class TicketUtil {
 		 */
 		public static int getMinimumFare(boolean discounted)
 		{
-			if (discounted==true)
+			if (discounted)
 			{
 				return RIDE_COST_DISCOUNTED;
 			}
