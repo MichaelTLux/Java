@@ -1,18 +1,51 @@
 package mini2;
 
+
+/**
+ * This Class allows a user to set up a rule 
+ * for what characters match what. Corresponding 
+ * indexes mean that the characters are equal.
+ * @author Michael Lux
+ *
+ */
 public class MatchingRule 
 {
-	//TODO instance variables
-	
+	/**
+	 * the first part of the rule that states
+	 * what characters can be valid and sets up
+	 * the corresponding indexes
+	 */
 	private String sourceString;
+	
+	/**
+	 * the second part of the rule, the indexes
+	 * that correspond with the source mean that
+	 * they are equal
+	 */
 	private String targetString;
 	
+	/**
+	 * This constructs a default matching rule that
+	 * has every character equal itself
+	 */
 	public MatchingRule()
 	{
 		sourceString="abcdefghijklmnopqrstuvwxyz";
 		targetString="abcdefghijklmnopqrstuvwxyz";
 	}
 	
+	/**
+	 * This constructs a matching rule using the parameters given
+	 * for a source and a target
+	 * @param givenSourceChars
+	 * 	the first part of the rule that states
+	 * what characters can be valid and sets up
+	 * the corresponding indexes
+	 * @param givenTargetChars
+	 * 	the second part of the rule, the indexes
+	 * that correspond with the source mean that
+	 * they are equal 
+	 */
 	public MatchingRule(String givenSourceChars, String givenTargetChars)
 	{
 		sourceString=givenSourceChars;
@@ -44,7 +77,16 @@ public class MatchingRule
 		
 		return flag;
 	}
-	
+	/**
+	 * uses the matching rule to determine of the characters
+	 * have been deemed equal
+	 * @param sourceChar
+	 * 	the character that is to correspond to the source
+	 * @param targetChar
+	 * 	the character that is to correspond to the target
+	 * @return
+	 * 	whether or not the two values where equal
+	 */
 	public boolean matches(char sourceChar, char targetChar)
 	{
 		int sourceIndex=validCharIndex(sourceChar);
@@ -62,7 +104,14 @@ public class MatchingRule
 		}
 		return false;
 	}
-	
+	/**
+	 * Determines if the given character is valid
+	 * according to the rule
+	 * @param checkThis
+	 * 	the character that is being checked
+	 * @return
+	 * 	whether or not the character is valid
+	 */
 	private boolean checkIfValidChar(char checkThis)
 	{
 		for (int index=0; index<sourceString.length();index=index+1)
@@ -74,7 +123,15 @@ public class MatchingRule
 		}
 		return false;
 	}
-	
+	/**
+	 * private helper method that finds the index if a valid
+	 * source character (already in java libraries just keeping
+	 * as a friendly reminder that I should check)
+	 * @param indexThis
+	 * 	the character that is being found
+	 * @return
+	 * 	the index of the character in the source string
+	 */
 	private int validCharIndex(char indexThis)
 	{
 		for (int index=0; index<sourceString.length();index=index+1)
