@@ -39,9 +39,14 @@ public class RobotPlayer
 						} 
 						else 
 						{ 
+							//Defusing
+							if(rc.senseMine(rc.getLocation())!=null)
+							{
+								rc.defuseMine(rc.getLocation());
+							}
 							// Choose to attack base, and move that way if possible
 							Direction dir = rc.getLocation().directionTo(rc.senseEnemyHQLocation());
-							if(rc.canMove(dir) && !rc.senseMineLocations(rc.getLocation(), 1, Team.NEUTRAL).equals(rc.getLocation())) 
+							if(rc.canMove(dir) && !(rc.senseMineLocations(rc.getLocation(), 1, Team.NEUTRAL).equals(rc.getLocation()))) 
 							{
 								rc.move(dir);
 								rc.setIndicatorString(0, "Last direction moved: "+dir.toString());
