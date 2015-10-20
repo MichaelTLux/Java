@@ -13,7 +13,7 @@ public class MyPolyPlotter
 	  {
 		 PolylinePlotter plotter = new PolylinePlotter();
 		 // open the file
-		    File file = new File("test.txt");    
+		    File file = new File("hello.txt");    
 		    Scanner scanner = new Scanner(file);
 		    String why="#";
 		    char commentChar= why.charAt(0);
@@ -29,12 +29,6 @@ public class MyPolyPlotter
 		    	  contructTheObject(line, plotter);
 		      	}
 		    }
-
-		    
-		    
-		    
-		    
-		    
 		    scanner.close();
 	  }
 	 private static void contructTheObject(String line, PolylinePlotter plotter)
@@ -43,6 +37,8 @@ public class MyPolyPlotter
 		 Scanner temp=new Scanner(line);
 		 int width;
 		 String color;
+		 int xCordinate;
+		 int yCordinate;
 		 if (temp.hasNextInt())
 		 {
 			 width=temp.nextInt();
@@ -52,8 +48,16 @@ public class MyPolyPlotter
 			 width=1;
 		 }
 		 color=temp.next();
-		 int xCordinate=temp.nextInt();
-		 int yCordinate=temp.nextInt();
+		 if (temp.hasNextInt())
+		 {
+			 xCordinate=temp.nextInt();
+			 yCordinate=temp.nextInt(); 
+		 }
+		 else
+		 {
+			 return;
+		 }
+			 
 		 plotter.startLine(color, new Point(xCordinate, yCordinate), width);
 		 while (temp.hasNextInt())
 		 {
