@@ -6,7 +6,7 @@ import battlecode.common.RobotController;
 import battlecode.common.RobotType;
 import battlecode.common.Team;
 
-public class RobotPlayer 
+public class TheBasicBot 
 {
 	public static void run(RobotController rc) 
 	{
