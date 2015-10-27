@@ -6,9 +6,9 @@ public class DeckTest
 {
   public static void main(String[] args)
   {
-	 Random random=new Random(7);
+	 Random random=new Random();
 	Deck deck = new Deck(random);
-    Card[] hand = deck.select(2);
+    Card[] hand = deck.select(100);
     System.out.println(Card.toString(hand));
   }
 }

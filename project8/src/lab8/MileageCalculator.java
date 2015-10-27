@@ -9,11 +9,8 @@ public class MileageCalculator
 {
 	public static void main(String args[]) throws FileNotFoundException
 	{
-		File file = new File("mileage.txt");
-
-		Scanner scanner= new Scanner(file);
 		ArrayList<FillUp> list = new ArrayList<FillUp>();
-		list=getFileInfo(list,scanner);
+		list=getFileInfo(list);
 		for (int index=0; index+1<list.size(); index=index+1)
 		{
 			int firstOd=list.get(index).getOdometer();
@@ -24,8 +21,10 @@ public class MileageCalculator
 		}
 	}
 	
-	private static ArrayList<FillUp> getFileInfo(ArrayList<FillUp> list, Scanner scanner)
+	private static ArrayList<FillUp> getFileInfo(ArrayList<FillUp> list) throws FileNotFoundException
 	{
+		File file = new File("mileage.txt");
+		Scanner scanner= new Scanner(file);
 		while (scanner.hasNextLine())
 		{
 			int odemeter=scanner.nextInt();

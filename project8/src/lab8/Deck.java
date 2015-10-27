@@ -49,7 +49,7 @@ public class Deck
   public Card[] select(int k)
   {
     Card[] hand=new Card[k];
-	for (int index=0; index<k && index<DECK_ARRAY_SIZE;index=index+1)
+	for (int index=0; index<k && index<=DECK_ARRAY_SIZE;index=index+1)
 	{
 		int generated=rand.nextInt(DECK_ARRAY_SIZE+1-index);
 		Card addedCard=cards[generated];

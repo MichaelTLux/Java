@@ -28,19 +28,23 @@ public class GameUtil
    */
   public static int findNextNonemptyCell(int[] arr, int start)
   {
-    // TODO
-	  if (start+1==arr.length)
+	  //this makes sure the programs stays in bounds
+	  if (start+1>=arr.length)
 	  {
-		  return start;
+		  return -1;
 	  }
-	  for (int currentIndex=start+1; start<arr.length; currentIndex=currentIndex+1)
+	  
+	  //starting one past the start find something that isn't zero
+	  for (int currentIndex=start; currentIndex<arr.length; currentIndex=currentIndex+1)
 	  {
 		  if (arr[currentIndex]!=0)
 		  {
 			  return currentIndex;
 		  }
 	  }
-    return 0;
+	  
+	//for error checking and it gets mad without it
+    return -1;
   }
   
   /**
@@ -76,16 +80,43 @@ public class GameUtil
    *   Move object describing the move, or null if there is no move
    */
   public static Move findNextMove(int[] arr, int index)
-  {// TODO
+  {
 	  
+	  //if the number is zero, check the next two numbers
 	  if (arr[index]==0)
 	  {
-		  for (int currentIndex=index+1; currentIndex<arr.length; currentIndex+=1)
+		  int nextNumber=findNextNonemptyCell(arr, index+1);
+		  int followingNumber=findNextNonemptyCell(arr, nextNumber+1);
+		  //if those next two number are the same return a move with there indexes and the zero's index and an increased value and check for "-1" errors
+		  if (!(nextNumber==-1) && !(followingNumber==-1) && arr[nextNumber]==arr[followingNumber])
 		  {
-			  int nextNumber=findNextNonemptyCell(arr, index);
-			  int followingNumber=findNextNonemptyCell(arr, nextNumber);
+			  int value=arr[followingNumber];
+			  Move move= new Move(nextNumber, followingNumber, index, value);
+			  return move;
+		  }
+		  //if those two numbers are different only return the index of the first number after zero and its value checking for error "-1"
+		  else if (!(nextNumber==-1))
+		  {
+			  int value=arr[nextNumber];
+			  Move move=new Move(nextNumber, index, value);
+			  return move;
 		  }
 	  }
+	  
+	  //if the number is not zero
+	  {
+		  int nextNumber=findNextNonemptyCell(arr, index+1);
+		  
+		  //if the next two number are the same return a move with there indexes and an increased value checking for error "-1"
+		  if (!(nextNumber==-1) && arr[index]==arr[nextNumber])
+		  {
+			  int value=arr[index];
+			  Move move= new Move(index, nextNumber, index, value);
+			  return move;
+		  }
+	  }
+	  
+	  //only should run if not a zero or if a nonzero doesn't have a match following
 	  return null;
   }
 
@@ -124,11 +155,17 @@ public class GameUtil
   public static ArrayList<Move> collapseArray(int[] arr)
   {
     //Iterate over the whole array
+	ArrayList<Move> returning= new ArrayList<Move>();
 	for (int index=0; index<arr.length; index=index+1)
     {
-    	findNextMove(arr, index);
+    	Move move= findNextMove(arr, index);
+    	if (move!=null)
+    	{
+    		returning.add(move);
+    	}
+    	
     }
-    return null;
+    return returning;
   }
   
   
