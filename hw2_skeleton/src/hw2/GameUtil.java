@@ -29,7 +29,7 @@ public class GameUtil
   public static int findNextNonemptyCell(int[] arr, int start)
   {
 	  //this makes sure the programs stays in bounds
-	  if (start+1>=arr.length)
+	  if (start>=arr.length)
 	  {
 		  return -1;
 	  }
@@ -132,7 +132,18 @@ public class GameUtil
    */
   public static void applyOneMove(int[] arr, Move move)
   {
-    // TODO
+    if (move.isMerged())
+    {
+    	int value=move.getValue()*2;
+    	arr[move.getOldIndex()]=0;
+    	arr[move.getOldIndex2()]=0;
+    	arr[move.getNewIndex()]=value;
+    }
+    else
+    {
+    	arr[move.getNewIndex()]=move.getValue();
+    	arr[move.getOldIndex()]=0;
+    }
   }
   
 
@@ -162,6 +173,7 @@ public class GameUtil
     	if (move!=null)
     	{
     		returning.add(move);
+    		applyOneMove(arr, move);
     	}
     	
     }

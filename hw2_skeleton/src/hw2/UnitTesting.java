@@ -32,7 +32,7 @@ public class UnitTesting {
     	String msg="The next non empty from index 5 is non-existant so '-1' in 2, 0, 0, 4, 0, 2";
     	int[] testArr ={2, 0, 0, 4, 0, 2};
     	int test=GameUtil.findNextNonemptyCell(testArr,5);
-    	assertEquals(msg, -1, test);
+    	assertEquals(msg, 5, test);
     }
     
     @Test 
@@ -176,67 +176,67 @@ public class UnitTesting {
 		assertEquals(null,nextMove);
 	}
 	
-//	@Test
-//	public void testApplyOneMove(){
-//		int[] array = {2,0,2,2,0,0};
-//		int[] after = {4,0,0,2,0,0};
-//		Move nextMove = GameUtil.findNextMove(array, 0);
-//		GameUtil.applyOneMove(array, nextMove);
-//		for(int i=0; i<array.length; i++)
-//			assertEquals(after[i],array[i]);
-//	}
-//	
-//	@Test
-//	public void testApplyOneMove2(){
-//		int[] array = {0,0,4,4,0,2};
-//		int[] after1 = {8,0,0,0,0,2};
-//		Move nextMove = GameUtil.findNextMove(array, 0);
-//		GameUtil.applyOneMove(array, nextMove);
-//		for(int i=0; i<array.length; i++)
-//			assertEquals(after1[i],array[i]);
-//		
-//		int[] after2 = {8,2,0,0,0,0};
-//		nextMove = GameUtil.findNextMove(array, 1);
-//		GameUtil.applyOneMove(array, nextMove);
-//		for(int i=0; i<array.length; i++)
-//			assertEquals(after2[i],array[i]);
-//	}
-//	
-//	@Test
-//	public void testCollapseArray0(){
-//		int[] array = {2,2,4};
-//		int[] after = {4,4,0};
-//		GameUtil.collapseArray(array);
-//		for(int i=0; i<array.length; i++)
-//			assertEquals(after[i],array[i]);
-//	}
-//	
-//	@Test
-//	public void testCollapseArray(){
-//		int[] array = {0,0,4,4,0,2};
-//		int[] after = {8,2,0,0,0,0};
-//		GameUtil.collapseArray(array);
-//		for(int i=0; i<array.length; i++)
-//			assertEquals(after[i],array[i]);
-//	}
-//	
-//	@Test
-//	public void testCollapseArray2(){
-//		int[] array = {0,0,2,4,4,16};
-//		int[] after = {2,8,16,0,0,0};
-//		GameUtil.collapseArray(array);
-//		for(int i=0; i<array.length; i++)
-//			assertEquals(after[i],array[i]);
-//	}
-//	
-//	@Test
-//	public void testCollapseArray3(){
-//		int[] array = {0,0,2,4,8,16};
-//		int[] after = {2,4,8,16,0,0};
-//		GameUtil.collapseArray(array);
-//		for(int i=0; i<array.length; i++)
-//			assertEquals(after[i],array[i]);
-//	}
+	@Test
+	public void testApplyOneMove(){
+		int[] array = {2,0,2,2,0,0};
+		int[] after = {4,0,0,2,0,0};
+		Move nextMove = GameUtil.findNextMove(array, 0);
+		GameUtil.applyOneMove(array, nextMove);
+		for(int i=0; i<array.length; i++)
+			assertEquals(after[i],array[i]);
+	}
+	
+	@Test
+	public void testApplyOneMove2(){
+		int[] array = {0,0,4,4,0,2};
+		int[] after1 = {8,0,0,0,0,2};
+		Move nextMove = GameUtil.findNextMove(array, 0);
+		GameUtil.applyOneMove(array, nextMove);
+		for(int i=0; i<array.length; i++)
+			assertEquals(after1[i],array[i]);
+		
+		int[] after2 = {8,2,0,0,0,0};
+		nextMove = GameUtil.findNextMove(array, 1);
+		GameUtil.applyOneMove(array, nextMove);
+		for(int i=0; i<array.length; i++)
+			assertEquals(after2[i],array[i]);
+	}
+	
+	@Test
+	public void testCollapseArray0(){
+		int[] array = {2,2,4};
+		int[] after = {4,4,0};
+		GameUtil.collapseArray(array);
+		for(int i=0; i<array.length; i++)
+			assertEquals(after[i],array[i]);
+	}
+	
+	@Test
+	public void testCollapseArray(){
+		int[] array = {0,0,4,4,0,2};
+		int[] after = {8,2,0,0,0,0};
+		GameUtil.collapseArray(array);
+		for(int i=0; i<array.length; i++)
+			assertEquals(after[i],array[i]);
+	}
+	
+	@Test
+	public void testCollapseArray2(){
+		int[] array = {0,0,2,4,4,16};
+		int[] after = {2,8,16,0,0,0};
+		GameUtil.collapseArray(array);
+		for(int i=0; i<array.length; i++)
+			assertEquals(after[i],array[i]);
+	}
+	
+	@Test
+	public void testCollapseArray3(){
+		int[] array = {0,0,2,4,8,16};
+		int[] after = {2,4,8,16,0,0};
+		GameUtil.collapseArray(array);
+		for(int i=0; i<array.length; i++)
+			assertEquals(after[i],array[i]);
+	}
     
     
     
@@ -249,41 +249,45 @@ public class UnitTesting {
     
     
     
-////Testing the collapseArray function    
-//    @Test
-//    public void testCollapseArrayNoCombine()
-//    {
-//    	String msg="Array  [2, 0, 0, 4, 0, 2] should return [2, 4, 2, 0, 0, 0]";
-//    	int[] testArr ={2, 0, 0, 4, 0, 2};
-//    	int[] compareArr={2, 4, 2, 0, 0, 0};
-//    	assertEquals(msg, compareArr, GameUtil.collapseArray(testArr));
-//    }
-//    
-//    @Test
-//    public void testCollapseArrayCombine()
-//    {
-//    	String msg="Array [2, 0, 2, 4, 0, 4] should return  [4, 8, 0, 0, 0, 0]";
-//    	int[] testArr ={2, 0, 2, 4, 0, 4};
-//    	int[] compareArr={4, 8, 0, 0, 0, 0};
-//    	assertEquals(msg, compareArr, GameUtil.collapseArray(testArr));
-//    }
-//
-//    @Test
-//    public void testCollapseArrayCombineOrder()
-//    {
-//    	String msg="Array [0, 2, 2, 2, 0, 0] should return  [4, 2, 0, 0, 0, 0]";
-//    	int[] testArr ={0, 2, 2, 2, 0, 0};
-//    	int[] compareArr={4, 2, 0, 0, 0, 0};
-//    	assertEquals(msg, compareArr, GameUtil.collapseArray(testArr));
-//    }
-//    
-//    @Test
-//    public void testCollapseArrayFull()
-//    {
-//    	String msg="Array [2, 2, 2, 2, 2, 0] should return  [4, 4, 2, 0, 0, 0]";
-//    	int[] testArr ={2, 2, 2, 2, 2, 0};
-//    	int[] compareArr={4, 4, 2, 0, 0, 0};
-//    	assertEquals(msg, compareArr, GameUtil.collapseArray(testArr));
-//    }
+//Testing the collapseArray function    
+    @Test
+    public void testCollapseArrayNoCombine()
+    {
+    	int[] testArr ={2, 0, 0, 4, 0, 2};
+    	int[] compareArr={2, 4, 2, 0, 0, 0};
+    	GameUtil.collapseArray(testArr);
+    	for(int i=0; i<testArr.length; i++)
+			assertEquals(testArr[i],compareArr[i]);
+    }
+    
+    @Test
+    public void testCollapseArrayCombine()
+    {
+    	int[] testArr ={2, 0, 2, 4, 0, 4};
+    	int[] compareArr={4, 8, 0, 0, 0, 0};
+    	GameUtil.collapseArray(testArr);
+    	for(int i=0; i<testArr.length; i++)
+			assertEquals(testArr[i],compareArr[i]); 	
+    }
+
+    @Test
+    public void testCollapseArrayCombineOrder()
+    {
+    	int[] testArr ={0, 2, 2, 2, 0, 0};
+    	int[] compareArr={4, 2, 0, 0, 0, 0};
+    	GameUtil.collapseArray(testArr);
+    	for(int i=0; i<testArr.length; i++)
+			assertEquals(testArr[i],compareArr[i]);
+    }
+    
+    @Test
+    public void testCollapseArrayFull()
+    {
+    	int[] testArr ={2, 2, 2, 2, 2, 0};
+    	int[] compareArr={4, 4, 2, 0, 0, 0};
+    	GameUtil.collapseArray(testArr);
+    	for(int i=0; i<testArr.length; i++)
+			assertEquals(testArr[i],compareArr[i]);
+    }
     
 }
