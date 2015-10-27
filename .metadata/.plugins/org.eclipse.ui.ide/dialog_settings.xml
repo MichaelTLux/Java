@@ -5,6 +5,7 @@
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/LocalUser/Downloads/hw2_skeleton"/>
 			<item value="/Users/LocalUser/workspace"/>
 			<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project2"/>
 			<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/project1"/>

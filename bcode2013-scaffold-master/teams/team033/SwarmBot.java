@@ -1,7 +1,6 @@
 package team033;
 
 import battlecode.common.*;
-import java.util.*;
 
 public class SwarmBot {
 	public static void run(RobotController rc) {
@@ -73,7 +72,7 @@ public class SwarmBot {
 
         public Direction getSpawnDirection(RobotType type) 
         {
-            Direction[] dirs = getDirectionsToward(this.theirHQ);
+        	
             Direction dir = rc.getLocation().directionTo(rc.senseEnemyHQLocation());
             return dir;
 //            for (Direction d : dirs) 

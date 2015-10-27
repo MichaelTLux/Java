@@ -29,6 +29,17 @@ public class GameUtil
   public static int findNextNonemptyCell(int[] arr, int start)
   {
     // TODO
+	  if (start+1==arr.length)
+	  {
+		  return start;
+	  }
+	  for (int currentIndex=start+1; start<arr.length; currentIndex=currentIndex+1)
+	  {
+		  if (arr[currentIndex]!=0)
+		  {
+			  return currentIndex;
+		  }
+	  }
     return 0;
   }
   
@@ -65,9 +76,17 @@ public class GameUtil
    *   Move object describing the move, or null if there is no move
    */
   public static Move findNextMove(int[] arr, int index)
-  {
-    // TODO
-    return null;
+  {// TODO
+	  
+	  if (arr[index]==0)
+	  {
+		  for (int currentIndex=index+1; currentIndex<arr.length; currentIndex+=1)
+		  {
+			  int nextNumber=findNextNonemptyCell(arr, index);
+			  int followingNumber=findNextNonemptyCell(arr, nextNumber);
+		  }
+	  }
+	  return null;
   }
 
   
@@ -104,7 +123,11 @@ public class GameUtil
    */
   public static ArrayList<Move> collapseArray(int[] arr)
   {
-    // TODO
+    //Iterate over the whole array
+	for (int index=0; index<arr.length; index=index+1)
+    {
+    	findNextMove(arr, index);
+    }
     return null;
   }
   
