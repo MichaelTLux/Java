@@ -22,6 +22,22 @@ import api.TilePosition;
  */
 public class Game
 {
+	//TODO java doc
+	
+	/**
+	 * This is the random generator object to choose the location of the next tile
+	 */
+	private Random rand;
+	
+	/**
+	 * this is the grid in which all of the actions take place
+	 */
+	private int[][] gameGrid;
+	
+	/**
+	 * this is the score of the current game
+	 */
+	private int score;
   
   /**
    * Constructs a game with a grid of the given size, using a default
@@ -33,6 +49,14 @@ public class Game
   public Game(int givenSize)
   {
     // TODO
+	rand= new Random();
+	gameGrid= new int[givenSize][givenSize];
+	score=0;
+	TilePosition a=generate();
+	becauseGenerateCant(gameGrid, a);
+	TilePosition b=generate();
+	becauseGenerateCant(gameGrid, b);
+	
   }
   
   /**
@@ -48,6 +72,13 @@ public class Game
   public Game(int givenSize, Random givenRandom)
   {
     // TODO
+	  rand=givenRandom;
+	  gameGrid= new int[givenSize][givenSize];
+	  score=0;
+	TilePosition a=generate();
+	becauseGenerateCant(gameGrid, a);
+	TilePosition b=generate();
+	becauseGenerateCant(gameGrid, b);
   }
   
    /**
@@ -61,8 +92,7 @@ public class Game
    */
   public int getCell(int row, int col)
   {
-    // TODO
-    return 0;
+        return gameGrid[row][col];
   }
   
   /**
@@ -73,7 +103,7 @@ public class Game
   public int getSize()
   {
     // TODO
-    return 0;
+    return gameGrid[0].length;
   }
   
   /**
@@ -84,7 +114,7 @@ public class Game
   public int getScore()
   {
     // TODO
-    return 0;
+    return score;
   }
 
   /**
@@ -97,7 +127,7 @@ public class Game
    *   copied into the new array in reverse (from right to left)
    *   <li>UP - the column indicated by the index <code>rowOrColumn</code> is
    *   copied into the new array from top to bottom
-   *   <li>DOWN - the row indicated by the index <code>rowOrColumn</code> is
+   *   <li>DOWN - the column indicated by the index <code>rowOrColumn</code> is
    *   copied into the new array in reverse (from bottom to top)
    * </ul>
    * @param rowOrColumn
@@ -109,8 +139,38 @@ public class Game
    */
   public int[] copyRowOrColumn(int rowOrColumn, Direction dir)
   {
-    // TODO
-    return null;
+    //TODO
+	  int [] returnArr= new int[gameGrid[rowOrColumn].length];
+	  
+	  if (dir==api.Direction.LEFT)
+	  {
+		  for (int index=0; index<gameGrid[0].length; index=index+1)
+		  {
+			  returnArr[index]=gameGrid[rowOrColumn][index];
+		  }
+	  }
+	  if (dir==api.Direction.RIGHT)
+	  {
+		  for (int index=gameGrid.length-1; index==0; index=index-1)
+		  {
+			  returnArr[index]=gameGrid[rowOrColumn][index];
+		  }  
+	  }
+	  if (dir==api.Direction.UP)
+	  {
+		  for (int index=0; index<gameGrid[0].length; index=index+1)
+		  {
+			  returnArr[index]=gameGrid[index][rowOrColumn];
+		  } 
+	  }
+	  if (dir==api.Direction.DOWN)
+	  {
+		  for (int index=gameGrid.length-1; index==0; index=index-1)
+		  {
+			  returnArr[index]=gameGrid[index][rowOrColumn];
+		  }
+	  }
+    return returnArr;
   }
   
   
@@ -139,6 +199,34 @@ public class Game
   public void updateRowOrColumn(int[] arr, int rowOrColumn, Direction dir)
   {
     // TODO
+	  if (dir==api.Direction.LEFT)
+	  {
+		  for (int index=0; index<gameGrid[0].length; index=index+1)
+		  {
+			  gameGrid[rowOrColumn][index]=arr[index];
+		  }
+	  }
+	  if (dir==api.Direction.RIGHT)
+	  {
+		  for (int index=gameGrid[0].length-1; index==0; index=index-1)
+		  {
+			  gameGrid[rowOrColumn][index]=arr[index];
+		  }  
+	  }
+	  if (dir==api.Direction.UP)
+	  {
+		  for (int index=0; index<gameGrid[0].length; index=index+1)
+		  {
+			  gameGrid[index][rowOrColumn]=arr[index];
+		  } 
+	  }
+	  if (dir==api.Direction.DOWN)
+	  {
+		  for (int index=gameGrid[0].length-1; index==0; index=index-1)
+		  {
+			  gameGrid[index][rowOrColumn]=arr[index];
+		  }
+	  }
   }
 
   /**
@@ -164,7 +252,19 @@ public class Game
   public Result collapse(Direction dir)
   {
     // TODO
-    return null;
+	  Result result=new Result();
+	  for (int index=0; index<gameGrid[0].length;index=index+1)
+	  {
+		  int[] copied= copyRowOrColumn(index, dir);
+		  ArrayList<Move> currentMoveSet= GameUtil.collapseArray(copied);
+		  result.addMoves(currentMoveSet);
+		  updateRowOrColumn(copied, index, dir);	  
+	  }
+	  TilePosition tile=generate();
+	  becauseGenerateCant(gameGrid, tile);
+	  result.setNewTile(tile);
+	  
+    return result;
   }
 
   /**
@@ -185,18 +285,75 @@ public class Game
   public TilePosition generate()
   {
     // TODO
-    return null;
+	boolean flag=false;
+	int col=0;
+	int row=0;
+	int whatNumber=0;
+	
+	boolean open=checkForOpenCell(gameGrid);
+	
+	//if false is returned by above operation it means no open spaces and therefore needs to return null
+	if (!open)
+	{
+		return null;
+	}
+	
+	//loop through till flag changes
+	while (!flag)
+	{	
+		col=rand.nextInt(getSize());
+		row=rand.nextInt(getSize());
+		
+		
+		//if the location on the grid that was selected is empty, change the flag
+		if (gameGrid[row][col]==0)
+		{
+			flag=true;
+		}
+	}
+	
+	whatNumber=rand.nextInt(10);
+	
+	//for 90% probability all numbers (0-9 are generated) only 0 is 5
+	if (whatNumber<1)
+	{
+		whatNumber=4;
+	}
+	else
+	{
+		whatNumber=2;
+	}
+	
+	TilePosition returning= new api.TilePosition(row, col, whatNumber);
+    return returning;
   }
-
+  
+  /**
+   * This helper class is used to look through the whole grid for a
+   * value of zero
+   * @param gameGrid
+   * 	the grid that is to be checked for zeros
+   * @return
+   * 	true if there was a zero and false if there wasn't
+   */
+  private static boolean checkForOpenCell(int[][] gameGrid)
+  {
+	  for (int row=0; row<gameGrid[0].length; row=+1)
+	  {
+		  for(int col=0; col<gameGrid[0].length ;col=col+1)
+		  {
+			  if (gameGrid[row][col]==0)
+			  {
+				  return true;
+			  }
+		  }
+	  }	  
+	  return false; 
+  }
+  public static void becauseGenerateCant(int[][] gameGrid, TilePosition tile)
+  {
+	  gameGrid[tile.getRow()][tile.getCol()]=tile.getValue();
+  }
 }
   
-
-
-
-
-
-
-
-
-
 

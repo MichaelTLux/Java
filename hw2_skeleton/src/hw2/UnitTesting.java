@@ -6,7 +6,6 @@ import org.junit.Before;
 import api.Move;
 
 
-
 public class UnitTesting {
 	
     
@@ -289,5 +288,7 @@ public class UnitTesting {
     	for(int i=0; i<testArr.length; i++)
 			assertEquals(testArr[i],compareArr[i]);
     }
+    
+    
     
 }
