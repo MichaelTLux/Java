@@ -321,13 +321,13 @@ public class Game
 	int row=0;
 	int whatNumber=0;
 	
-	boolean open=checkForOpenCell(gameGrid);
-	
-	//if false is returned by above operation it means no open spaces and therefore needs to return null
-	if (!open)
-	{
-		return null;
-	}
+//	boolean open=checkForOpenCell(gameGrid);
+//	
+//	//if false is returned by above operation it means no open spaces and therefore needs to return null
+//	if (!open)
+//	{
+//		return null;
+//	}
 	
 	//loop through till flag changes
 	while (!flag)
@@ -373,7 +373,7 @@ public class Game
 	  {
 		  for(int col=0; col<gameGrid[0].length ;col=col+1)
 		  {
-			  if (gameGrid[row][col]==0)
+			  if (gameGrid[col][row]==0)
 			  {
 				  return true;
 			  }
