@@ -12,4 +12,5 @@
 <fullyQualifiedTypeName name="api.Direction"/>
 <fullyQualifiedTypeName name="api.Move"/>
 <fullyQualifiedTypeName name="api.Result"/>
+<fullyQualifiedTypeName name="java.lang.Runtime"/>
 </qualifiedTypeNameHistroy>
