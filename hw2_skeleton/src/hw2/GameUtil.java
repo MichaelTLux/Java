@@ -13,6 +13,7 @@ import api.Move;
  * left.  The Game class can use these methods to collapse a row or column
  * in any direction by copying that row or column, forward or backward,
  * into a temporary one-dimensional array.
+ * @author Michael Lux
  */
 public class GameUtil
 {
@@ -33,8 +34,7 @@ public class GameUtil
 	  {
 		  return -1;
 	  }
-	  
-	  //starting one past the start find something that isn't zero
+
 	  for (int currentIndex=start; currentIndex<arr.length; currentIndex=currentIndex+1)
 	  {
 		  if (arr[currentIndex]!=0)
@@ -107,7 +107,7 @@ public class GameUtil
 	  {
 		  int nextNumber=findNextNonemptyCell(arr, index+1);
 		  
-		  //if the next two number are the same return a move with there indexes and an increased value checking for error "-1"
+		  //if the next two number are the same return a move with there indexes checking for error "-1"
 		  if (!(nextNumber==-1) && arr[index]==arr[nextNumber])
 		  {
 			  int value=arr[index];
@@ -116,7 +116,7 @@ public class GameUtil
 		  }
 	  }
 	  
-	  //only should run if not a zero or if a nonzero doesn't have a match following
+	  //should only run if all zeros, the current number has no following values that match, or a zero with nothing after
 	  return null;
   }
 
@@ -165,7 +165,6 @@ public class GameUtil
    */
   public static ArrayList<Move> collapseArray(int[] arr)
   {
-    //Iterate over the whole array
 	ArrayList<Move> returning= new ArrayList<Move>();
 	for (int index=0; index<arr.length; index=index+1)
     {

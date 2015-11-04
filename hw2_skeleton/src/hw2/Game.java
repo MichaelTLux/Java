@@ -1,6 +1,5 @@
 package hw2;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 import api.Direction;
@@ -19,11 +18,10 @@ import api.TilePosition;
  * <p>
  * Whenever two cells are <em>merged</em>, the score is increased by the 
  * combined value of the two cells.
+ * @author Michael Lux
  */
 public class Game
 {
-	//TODO java doc
-	
 	/**
 	 * This is the random generator object to choose the location of the next tile
 	 */
@@ -48,15 +46,13 @@ public class Game
    */
   public Game(int givenSize)
   {
-    // TODO
 	rand= new Random();
 	gameGrid= new int[givenSize][givenSize];
 	score=0;
 	TilePosition a=generate();
 	setCell(a.getRow(), a.getCol(), a.getValue());
 	TilePosition b=generate();
-	setCell(b.getRow(), b.getCol(), b.getValue());
-	
+	setCell(b.getRow(), b.getCol(), b.getValue());	
   }
   
   /**
@@ -71,15 +67,13 @@ public class Game
    */
   public Game(int givenSize, Random givenRandom)
   {
-    // TODO
 	  rand=givenRandom;
 	  gameGrid= new int[givenSize][givenSize];
 	  score=0;
 	TilePosition a=generate();
 	setCell(a.getRow(), a.getCol(), a.getValue());
 	TilePosition b=generate();
-	setCell(b.getRow(), b.getCol(), b.getValue());
-		
+	setCell(b.getRow(), b.getCol(), b.getValue());		
   }
   
    /**
@@ -103,8 +97,7 @@ public class Game
    */
   public int getSize()
   {
-    // TODO
-    return gameGrid[0].length;
+    return gameGrid.length;
   }
   
   /**
@@ -114,7 +107,6 @@ public class Game
    */
   public int getScore()
   {
-    // TODO
     return score;
   }
 
@@ -142,36 +134,35 @@ public class Game
   {
     //TODO
 	  int jndex=0;
-	  int [] returnArr= new int[gameGrid[rowOrColumn].length];
+	  int [] returnArr= new int[getSize()];
 	  
 	  if (dir==api.Direction.LEFT)
 	  {
-		  for (int index=0; index<gameGrid[0].length; index=index+1)
+		  for (int index=0; index<getSize(); index=index+1)
 		  {
-			  returnArr[index]=gameGrid[rowOrColumn][index];
+			  returnArr[index]=getCell(rowOrColumn, index);
 		  }
 	  }
 	  if (dir==api.Direction.RIGHT)
 	  {
-		  System.out.println(gameGrid.length);
-		  for (int index=gameGrid.length-1; index>=0; index=index-1)
+		  for (int index=getSize()-1; index>=0; index=index-1)
 		  {
-			  returnArr[jndex]=gameGrid[rowOrColumn][index];
+			  returnArr[jndex]=getCell(rowOrColumn, index);
 			  jndex=jndex+1;
 		  }  
 	  }
 	  if (dir==api.Direction.UP)
 	  {
-		  for (int index=0; index<gameGrid[0].length; index=index+1)
+		  for (int index=0; index<getSize(); index=index+1)
 		  {
-			  returnArr[index]=gameGrid[index][rowOrColumn];
+			  returnArr[index]=getCell(index, rowOrColumn);
 		  } 
 	  }
 	  if (dir==api.Direction.DOWN)
 	  {
-		  for (int index=gameGrid.length-1; index>=0; index=index-1)
+		  for (int index=getSize()-1; index>=0; index=index-1)
 		  {
-			  returnArr[jndex]=gameGrid[index][rowOrColumn];
+			  returnArr[jndex]=getCell(index, rowOrColumn);
 			  jndex=jndex+1;
 		  }
 	  }
@@ -207,31 +198,31 @@ public class Game
 	  int jndex=0;
 	  if (dir==api.Direction.LEFT)
 	  {
-		  for (int index=0; index<gameGrid[0].length; index=index+1)
+		  for (int index=0; index<getSize(); index=index+1)
 		  {
-			  gameGrid[rowOrColumn][index]=arr[index];
+			  setCell(rowOrColumn, index, arr[index]);
 		  }
 	  }
 	  if (dir==api.Direction.RIGHT)
 	  {
-		  for (int index=gameGrid[0].length-1; index>=0; index=index-1)
+		  for (int index=getSize()-1; index>=0; index=index-1)
 		  {
-			  gameGrid[rowOrColumn][jndex]=arr[index];
+			  setCell(rowOrColumn, jndex, arr[index]);
 			  jndex=jndex+1;
 		  }  
 	  }
 	  if (dir==api.Direction.UP)
 	  {
-		  for (int index=0; index<gameGrid[0].length; index=index+1)
+		  for (int index=0; index<getSize(); index=index+1)
 		  {
-			  gameGrid[index][rowOrColumn]=arr[index];
+			  setCell(index, rowOrColumn, arr[index]);
 		  } 
 	  }
 	  if (dir==api.Direction.DOWN)
 	  {
-		  for (int index=gameGrid[0].length-1; index>=0; index=index-1)
+		  for (int index=getSize()-1; index>=0; index=index-1)
 		  {
-			  gameGrid[jndex][rowOrColumn]=arr[index];
+			  setCell(jndex, rowOrColumn, arr[index]);
 			  jndex=jndex+1;
 		  }
 	  }
@@ -262,7 +253,7 @@ public class Game
     // TODO
 	  ArrayList<Move> currentMoveSet= new ArrayList<>();
 	  Result result=new Result();
-	  for (int index=0; index<gameGrid[0].length;index=index+1)
+	  for (int index=0; index<getSize();index=index+1)
 	  {
 		  int[] copied= copyRowOrColumn(index, dir);
 		  currentMoveSet= GameUtil.collapseArray(copied);
@@ -316,19 +307,10 @@ public class Game
    */
   public TilePosition generate()
   {
-    // TODO
 	boolean flag=false;
 	int col=0;
 	int row=0;
 	int whatNumber=0;
-	
-//	boolean open=checkForOpenCell(gameGrid);
-//	
-//	//if false is returned by above operation it means no open spaces and therefore needs to return null
-//	if (!open)
-//	{
-//		return null;
-//	}
 	
 	//loop through till flag changes
 	while (!flag)
@@ -338,7 +320,7 @@ public class Game
 		
 		
 		//if the location on the grid that was selected is empty, change the flag
-		if (gameGrid[row][col]==0)
+		if (getCell(row, col)==0)
 		{
 			flag=true;
 		}
@@ -346,7 +328,7 @@ public class Game
 	
 	whatNumber=rand.nextInt(10);
 	
-	//for 90% probability all numbers (0-9 are generated) only 0 is 5
+	//for 90% probability all numbers (0-9 are generated) only 0 is turned into a 4
 	if (whatNumber<1)
 	{
 		whatNumber=4;
@@ -360,36 +342,18 @@ public class Game
     return returning;
   }
   
+  /**
+   * This method set the cell at the row and column given to the value given
+   * @param row
+   * 	the row of the cell that should be edited
+   * @param col
+   * 	the column of the cell that should be edited
+   * @param value
+   * 	the value that it needs to change to
+   */
   public void setCell(int row, int col, int value)
   {
 	  gameGrid[row][col]=value;
-  }
-  
-  /**
-   * This helper class is used to look through the whole grid for a
-   * value of zero
-   * 
-   * it caused the game to freeze so it was removed but is here for
-   * test purposes
-   * 
-   * @param gameGrid
-   * 	the grid that is to be checked for zeros
-   * @return
-   * 	true if there was a zero and false if there wasn't
-   */
-  private static boolean checkForOpenCell(int[][] gameGrid)
-  {
-	  for (int row=0; row<gameGrid[0].length; row=+1)
-	  {
-		  for(int col=0; col<gameGrid[0].length ;col=col+1)
-		  {
-			  if (gameGrid[col][row]==0)
-			  {
-				  return true;
-			  }
-		  }
-	  }	  
-	  return false; 
   }
 }
   
