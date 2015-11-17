@@ -20,7 +20,7 @@ public class GameMain
   /**
    * Size of grid for the game.
    */
-  private static final int GRID_SIZE = 4;
+  private static final int GRID_SIZE = 10;
   
   /**
    * Attempt to animate movement of tiles.

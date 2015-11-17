@@ -5,12 +5,14 @@
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="battlecode.common.Team"/>
 <fullyQualifiedTypeName name="hw2.GameUtil"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="api.TilePosition"/>
-<fullyQualifiedTypeName name="api.Direction"/>
 <fullyQualifiedTypeName name="api.Move"/>
 <fullyQualifiedTypeName name="api.Result"/>
 <fullyQualifiedTypeName name="java.lang.Runtime"/>
+<fullyQualifiedTypeName name="api.Direction"/>
+<fullyQualifiedTypeName name="api.TilePosition"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>

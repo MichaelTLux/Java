@@ -1,35 +1,3 @@
-1 package lab7;
-2 
-3 import java.util.Scanner;
-4 import java.io.File;
-5 import java.io.FileNotFoundException;
-6 import java.io.PrintWriter;
-7 
-8 public class LineNumberer
-9 {
-10   public static void main(String[] args) throws FileNotFoundException
-11   {
-12 	File file = new File("src/lab7/LineNumberer.java");
-13 	System.out.println(file.exists());          // true if the file exists
-14     System.out.println(file.getName());         // name of the file 
-15     System.out.println(file.getAbsolutePath()); // absolute path to the file
-16     System.out.println(file.length());          // size of the file
-17 	Scanner scanner = new Scanner(file);
-18     int lineCount = 1;
-19     
-20     //add writing to a string
-21     File outFile = new File("mydocument.txt");
-22     PrintWriter out = new PrintWriter(outFile);
-23 
-24     while (scanner.hasNextLine())
-25     {
-26       String line = scanner.nextLine();
-27       out.print(lineCount + " ");
-28       out.println(line);
-29       lineCount += 1;
-30     }
-31     System.out.println("Done");
-32     scanner.close();
-33     out.close();
-34   }
-35 }
+happy happy happy potatoe
+then i flew away
+
