@@ -52,7 +52,7 @@ public class IntListSorted extends IntList
 	    	 }
 	    	 else
 	    	 {
-	    	 return super.get((super.size/2));
+	    		 return super.get((super.size/2));
 	    	 }
 	     }
 	}

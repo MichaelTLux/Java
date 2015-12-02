@@ -25,16 +25,8 @@ public class GroupPhoto extends JFrame {
     // Replace these constructor calls with calls to constructors
     // for other students' code you download from Piazza
     portraits.add(new Portrait14MTL());
-    portraits.add(new Portrait(0.21));
-    portraits.add(new Portrait(0.22));
-    portraits.add(new Portrait(0.23));
-    portraits.add(new Portrait(0.24));
-    portraits.add(new Portrait(0.25));
-    portraits.add(new Portrait(0.26));
-    portraits.add(new Portrait(0.27));
-    portraits.add(new Portrait(0.28));
-    portraits.add(new Portrait(0.29));
-    portraits.add(new Portrait(0.3));
+    portraits.add(new Portrait14CP());
+    portraits.add(new Portrait14AT());
     
     // Boilerplate code for starting any Swing application
     Runnable r = new Runnable()
