@@ -91,7 +91,7 @@ public class JumpOnEnemyExample extends JPanel
     r = new SolidRenderer(Color.RED);
     Enemy e = new Enemy(200, 300 - SIZE, SIZE, SIZE, r);
     e.setBounds(200, 300);
-    e.setDirection(1, 0);
+    e.setDirection(5, 0);
     platform.addChild(e);
     
     r = new SolidRenderer(Color.YELLOW);

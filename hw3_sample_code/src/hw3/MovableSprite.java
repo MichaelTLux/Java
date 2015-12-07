@@ -68,6 +68,10 @@ public abstract class MovableSprite extends Sprite
 		return ySpeed;
 	}
 	
+	public void update()
+	{
+		  super.update();
+	}
 	
 
 }

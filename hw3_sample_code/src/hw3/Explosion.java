@@ -43,6 +43,10 @@ public class Explosion extends Sprite
 	 */
 	public void update()
 	{
+		if (lifeTime>0)
+		{
+		lifeTime=lifeTime-1;
+		}
 		super.update();
 		if (lifeTime<=0)
 		{
@@ -51,7 +55,6 @@ public class Explosion extends Sprite
 		}
 		else
 		{
-			lifeTime=lifeTime-1;
 			return;
 		}
 		
