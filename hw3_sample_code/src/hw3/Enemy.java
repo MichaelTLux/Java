@@ -31,12 +31,12 @@ public class Enemy extends BoundedSprite
 		
 		if (newX<=this.getLeftBound())
 		{
-			//newX=this.getLeftBound();
+			newX=this.getLeftBound();
 			this.setDirection(-this.getDx(), this.getDy());
 		}
 		else if (newX+this.getWidth()>=this.getRightBound())
 		{
-			//newX=this.getRightBound()-this.getWidth();
+			newX=this.getRightBound()-this.getWidth();
 			this.setDirection(-this.getDx(), this.getDy());
 		}
 		

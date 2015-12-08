@@ -163,7 +163,7 @@
 	<section name="quick_assist_proposal_size">
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="1" key="pageIndex"/>
+		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="JavadocWizardDialog">
 		<item value="600" key="DIALOG_WIDTH"/>
