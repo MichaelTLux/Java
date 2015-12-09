@@ -168,6 +168,12 @@ public class JumpExample extends JPanel
         player.setPosition(player.getXExact(), platform.getYExact() - player.getHeight());
         player.setDirection(player.getDx(), 0);      
       }
+      if (player.isBallistic())
+      {
+    	  System.out.println("Y= " + player.getY());
+    	  System.out.println("Dy= " + player.getDy());
+
+      }
       
       repaint();
     }

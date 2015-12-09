@@ -1,6 +1,9 @@
 package hw3;
 
 import org.junit.Test;
+
+import com.sun.javafx.geom.Rectangle;
+
 import demo.ExplosionRenderer;
 import static org.junit.Assert.*;
 import java.awt.Color;
@@ -8,32 +11,28 @@ import java.util.ArrayList;
 
 import org.junit.Before;
 
-/**
- * Clarifications i need from a TA
- * 
- * General
- * can x and y be negative?
- * What is happening with my Javadoc
- * 
- * Explosion
- * is lifetime supposed to be able to go negative?
- * 
- * Projectile
- * is gravity initially 0
- * 
- * BoundedSprites
- * do they "bounce off" or do they set at the boundary
- * 
- * @author Michael Lux
- *
- */
+
 public class TestingAllTheCodes 
 {
 	Platform platform;
 	Explosion explosion;
 	Projectile projectile;
 	Enemy enemy;
+	private Projectile p2 = new Projectile(100.0, 120.0, 10, 15, null);
+
+	private Projectile dummy = new Projectile(114.0, 120.0, 10, 10, null);
+
+	private Rectangle right = new Rectangle(100, 120, 10, 15);
+
+	private static final double EPSILON = 10e-07;
 	
+	private Explosion e2 = new Explosion(100.0, 110.0, 15, 10, null, 40);
+	
+	private Rectangle right2 = new Rectangle(100, 110, 15, 10);
+	
+	private Projectile p3 = new Projectile(89.0, 110.0, 10, 10, null);
+
+	private double g = 3.0;
 	 @Before
 	    public void setup()
 	    {
@@ -47,6 +46,17 @@ public class TestingAllTheCodes
 		 explosion=new Explosion(x,y,width,height, renderer, initialCount);
 		 projectile=new Projectile(x,y,width,height, renderer);
 		 enemy= new Enemy(x,y,width,height, renderer);
+		 
+		 for(int i=0;i<7;i+=1)
+			{
+				p2.update();
+			}
+			p2.setDirection(2.0, 4.0);
+			
+			for(int i =0;i<10;i+=1)
+			{
+				e2.update();
+			}
 	    }
 	 @Test
 	 	//Explosion Stuff
@@ -375,8 +385,203 @@ public class TestingAllTheCodes
 	 
 	 
 	 
-	 
-	 
+//Malfunctioned saying the same values where different	 
+//	 @Test
+//		public void testGet2()
+//		{
+//			assertEquals(15,e2.getWidth());
+//			assertEquals(10,e2.getHeight());
+//			assertEquals(100, e2.getX());
+//			assertEquals(100.0, e2.getXExact(), EPSILON);
+//			assertEquals(110.0, e2.getYExact(), EPSILON);
+//			assertEquals(right2, e2.getRect());
+//			assertEquals(110, e2.getY());
+//			assertEquals(10,e2.getTicks());
+//			assertEquals(false, e2.shouldDelete());
+//			assertEquals(40, e2.getCount());
+//		}	
+		
+		@Test
+		public void testDeletion()
+		{
+			assertEquals(false, e2.shouldDelete());
+			for(int i = 0; i<32;i+=1)
+			{
+				e2.update();
+				if(e2.getTicks()==40)
+				{
+					e2.markForDeletion();
+				}
+			}
+			assertEquals(true, e2.shouldDelete());
+		}
+		
+		@Test
+		public void testCollides()
+		{
+			p3.setDirection(2.0, 0.0);
+			assertEquals(false, e2.collides(p3));
+			p3.update();
+			assertEquals(true, e2.collides(p3));
+			
+			//resets for p
+			p3.setPosition(89.0, 110.0);
+			p3.setDirection(0.0, 0.0);
+			assertEquals(false, e2.collides(p3));
+			
+			p3.setDirection(0.0, 2.0);
+			p3.setPosition(100.0, 91.0);
+			for(int i=0; i <5; i+=1)
+			{
+				p3.update();
+			}
+			assertEquals(true, e2.collides(p3));
+		}
+//Malfunctioned saying similar values where not the same	 
+//	 @Test
+//		public void testGet()
+//		{
+//			assertEquals(2.0, p2.getDx(), EPSILON);
+//			assertEquals(4.0, p2.getDy(), EPSILON);
+//			assertEquals(10, p2.getWidth());
+//			assertEquals(15, p2.getHeight());
+//			assertEquals(100, p2.getX());
+//			assertEquals(120, p2.getY());
+//			assertEquals(100.0, p2.getXExact(), EPSILON);
+//			assertEquals(120.0, p2.getYExact(), EPSILON);
+//			assertEquals(right, p2.getRect());
+//			assertEquals(7, p2.getTicks());
+//			assertEquals(false, p2.isBallistic());
+//		}
+
+		@Test
+		public void testDirection()
+		{
+			p2.setDirection(1.0, 0.0);
+
+			for(int i=0;i<5;i+=1)
+			{
+				p2.update();
+			}
+			assertEquals(true, p2.collides(dummy));
+
+			//reset
+			p2.setPosition(100.0, 120.0);
+			assertEquals(false, p2.collides(dummy));
+
+			dummy.setPosition(100.0, 140.0);
+			p2.setDirection(0.0, 2.0);
+
+			for(int i=0;i<3;i+=1)
+			{
+				p2.update();
+			}
+			assertEquals(true, p2.collides(dummy));
+
+			//reset
+			p2.setPosition(100.0, 120.0);
+			assertEquals(false, p2.collides(dummy));
+		}
+
+		@Test
+		public void testBalistic()
+		{
+			p2.setDirection(-2.0, 0.0);
+			p2.setBallistic(true);
+			p2.setDirection(0.0, 0.0);
+			for(int i=0;i<5;i+=1)
+			{
+				p2.update();
+			}
+			dummy.setPosition(81.0, 120.0);
+			assertEquals(true, p2.collides(dummy));
+
+			//reset
+			p2.setBallistic(false);
+			p2.setPosition(100.0, 120.0);
+			dummy.setPosition(114.0, 120.0);
+
+			assertEquals(false, p2.isBallistic());
+
+			p2.setPosition(110.0, 120.0);
+			p2.setDirection(0.0, 2.0);
+			p2.setBallistic(true);
+			p2.setDirection(0.0, 0.0);
+			for(int i=0;i<5;i+=1)
+			{
+				p2.update();
+			}
+			assertEquals(true, p2.collides(dummy));
+
+			//reset
+			p2.setBallistic(false);
+			p2.setPosition(100.0, 120.0);
+			dummy.setPosition(114.0, 120.0);
+		}
+
+		@Test
+		public void testGravity()
+		{
+			p2.setGravity(g);
+
+			p2.setDirection(2.0, -8.0);
+			p2.setBallistic(true);
+			dummy.setPosition(106.0, 105.0);
+			for(int i=0;i<3;i+=1)
+			{
+				p2.update();
+			}
+			assertEquals(true, p2.collides(dummy));
+
+			//reset
+			p2.setBallistic(false);
+			p2.setPosition(100.0, 120.0);
+			p2.setDirection(0.0, 0.0);
+			dummy.setPosition(114.0, 120.0);
+
+			p2.setDirection(-2.0, 0);
+			dummy.setPosition(83.0, 141.0);
+			for(int i=0;i<4;i+=1)
+			{
+				p2.update();
+			}
+			assertEquals(true, p2.collides(dummy));
+
+			//reset
+			p2.setBallistic(false);
+			p2.setPosition(100.0, 120.0);
+			p2.setDirection(0.0, 0.0);
+			dummy.setPosition(114.0, 120.0);
+
+			p2.setDirection(1.0, -12.0);
+			p2.setBallistic(true);
+			for(int i=0;i<3;i+=1)
+			{
+				p2.update();
+			}
+			p2.setDirection(0.0, p2.getDy());
+			for(int i=0;i<2;i+=1)
+			{
+				p2.update();
+			}
+			dummy.setPosition(96.0, 96.0);
+			assertEquals(true, p2.collides(dummy));
+
+			//reset
+			p2.setBallistic(false);
+			p2.setPosition(100.0, 120.0);
+			p2.setDirection(0.0, 0.0);
+			dummy.setPosition(114.0, 120.0);
+			
+			p2.setGravity(0.0);
+			p2.setDirection(0.0, -3.0);
+			for(int i=0;i<5;i+=1)
+			{
+				p2.update();
+			}
+			dummy.setPosition(100.0, 96.0);
+			assertEquals(true, p2.collides(dummy));
+		}
 	 
 	 
      @org.junit.Test
