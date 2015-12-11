@@ -9,7 +9,7 @@ public class TicTacToeTest {
    */
   public static void main(String[] args) {
     //playInteractive();
-    playIterations(10000);
+    playIterations(1000);
   }
   
 //  /**
@@ -35,7 +35,7 @@ public class TicTacToeTest {
     for (int i = 0; i < numIters; ++i)
     {
     	Random random=new Random();
-      Player[] players = {new RandomPlayer(), new MyPlayer(random)};
+      Player[] players = {new MyPlayer(), new RandomPlayer(random)};
       TicTacToeGame game = new TicTacToeGame(players, false);
       game.run();
       int index = game.getWinner() + 1; // returns -1, 0, or 1
