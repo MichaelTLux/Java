@@ -3,6 +3,12 @@ package hw3;
 import java.util.ArrayList;
 import java.awt.Graphics;
 
+/**
+ * This class encapsulates that information needed to
+ * create an entity that will stay within the bound given
+ * to it
+ * @author Michael Lux
+ */
 public class Platform extends BoundedSprite
 {
 	/**
@@ -10,6 +16,20 @@ public class Platform extends BoundedSprite
 	 */
 	private ArrayList<Enemy> children;
 	
+	/**
+	 * Constructs a platform that is able to follow bounds
+	 * but doesn't start off with any of its own
+	 * @param x
+	 * 	top left horizontal location
+	 * @param y
+	 * 	top left vertical location
+	 * @param width
+	 * 	the width of the explosion
+	 * @param height
+	 * 	the height of the explosion
+	 * @param givenRenderer
+	 * 	the screen in which the explosion will appear
+	 */
 	public Platform(double x, double y, int width, int height, Renderer givenRenderer) 
 	{
 		super(x, y, width, height, givenRenderer);
@@ -70,9 +90,12 @@ public class Platform extends BoundedSprite
 	  public void update()
 	  {
 		  super.update();
-
+		  
+		  //initially calculate where it should go without bounds
 		  double newX= super.getDx()+super.getXExact();
 		  double newY= super.getDy()+super.getYExact();
+		  
+		  //then check the bounds to see if it went over and if so reverse the direction
 		  if (newX<=super.getLeftBound())
 		  {
 			  newX=super.getLeftBound();
@@ -85,7 +108,7 @@ public class Platform extends BoundedSprite
 		  }
 		  
 		  super.setPosition(newX, newY);
-		  
+		  //updating the children after makes more senses for the game logic
 		  for (int i=0; i<children.size(); i=i+1)
 		    {
 		    	children.get(i).update();

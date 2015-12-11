@@ -53,6 +53,7 @@ public abstract class MovableSprite extends Sprite
 	/**
 	 * the current horizontal speed of the Sprite
 	 * @return
+	 * 	returns the horizontal speed of the Sprite
 	 */
 	public double getDx()
 	{
@@ -62,6 +63,7 @@ public abstract class MovableSprite extends Sprite
 	/**
 	 * the current vertical speed of the Sprite
 	 * @return
+	 * 	returns the vertical speed of the Sprite
 	 */
 	public double getDy()
 	{

@@ -3,7 +3,7 @@ package hw3;
 /**
  * This class encapsulates that information needed to
  * create an entity that will stay within the bounds of 
- * a parent sprite
+ * a parent sprite or its given bounds
  * @author Michael Lux
  *
  */
@@ -53,8 +53,11 @@ public class Enemy extends BoundedSprite
 		if (!(parent==null))
 		{
 			this.setBounds(parent.getXExact(), parent.getXExact()+parent.getWidth());
+			
 			//now if the parent is AT the boundary that means they just flipped the Dx
 			//and therefore it should not be added normally
+			
+			//not at a bound
 			if (!(parent.getX()==parent.getLeftBound()) && !(parent.getX()==parent.getRightBound()))
 			{
 				newX=this.getXExact()+parent.getDx()+this.getDx();
@@ -65,7 +68,7 @@ public class Enemy extends BoundedSprite
 				newX=this.getXExact()-parent.getDx()+this.getDx();
 			}
 		}
-		//if there isn't just add dx to your x
+		//if there isn't a parent just add dx to your x
 		else
 		{
 			newX=this.getXExact()+this.getDx();			
@@ -79,10 +82,10 @@ public class Enemy extends BoundedSprite
 		}
 		else if (newX+this.getWidth()>=this.getRightBound())
 		{
-			//this following line is a discrepancy I found with other programmers "may be wrong"
 			newX=this.getRightBound()-this.getWidth();
 			this.setDirection(-this.getDx(), this.getDy());
 		}
+		
 		//y isn't bounded so it just is
 		newY=this.getYExact()+this.getDy();
 		this.setPosition(newX, newY);
