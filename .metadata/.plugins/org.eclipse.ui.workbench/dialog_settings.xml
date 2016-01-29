@@ -34,6 +34,8 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="/Users/LocalUser/Desktop/Eclipse/edu/iastate/cs228/hw1"/>
+			<item value="/Users/LocalUser/Desktop/Assignment_1"/>
 			<item value="/Users/LocalUser/Downloads"/>
 			<item value="/Users/LocalUser/Desktop"/>
 			<item value="/Users/LocalUser/Desktop/Eclipse/SourceTree/mini1"/>
