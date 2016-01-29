@@ -5,6 +5,9 @@ public class QuickTests {
 	{
 //		char[] charA={'a','c','g','t'};
 //		DNASequence s= new DNASequence(charA);
+		char[] charB={'A'};
+		Sequence a=new Sequence(charB);
+		System.out.println(a.toString());
 	}
 
 }

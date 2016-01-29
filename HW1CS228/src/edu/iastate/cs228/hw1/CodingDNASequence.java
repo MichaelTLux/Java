@@ -8,17 +8,49 @@ public class CodingDNASequence extends DNASequence
 {
   public CodingDNASequence(char[] cdnaarr)
   {
-    // TODO
+	  super(cdnaarr);
+	  for (int i=0; i<cdnaarr.length; i=i+1)
+	    {
+	    	if (!(isValidLetter(cdnaarr[i])|| super.isValidLetter(cdnaarr[i])))
+	    	{
+	    		throw new IllegalArgumentException("Invalid sequence letter for class edu.iastate.cs228.hw1.DNASequence");
+	    	}
+	    }
+	    String copy="";
+	    for (int i=0; i<cdnaarr.length; i=i+1)
+	    {
+	    	copy=copy+cdnaarr[i];
+	    }
+	    seqarr=copy.toCharArray();
   }
 
   public boolean checkStartCodon()
   {
-    // TODO
+    if (seqarr.length<3)
+    {
+    	return false;
+    }
+    return (seqarr[0]=='a' ||seqarr[0]=='A') && (seqarr[1]=='t' ||seqarr[1]=='T') && (seqarr[2]=='g' ||seqarr[2]=='G');
   }
 
-  public char[] translate()
+  public char[] translate() throws RuntimeException
   {
-    // TODO
+    if (!checkStartCodon())
+    {
+    	throw new RuntimeException("No start codon");
+    }
+    String returning="";
+    for (int i=0; (i+2)<seqarr.length; i=i+3)
+    {
+    	String codon="";
+    	codon=codon+seqarr[i]+seqarr[i+1]+seqarr[i+2];
+    	if (getAminoAcid(codon)=='$')
+    	{
+    		break;
+    	}
+    	returning=returning+getAminoAcid(codon);
+    }
+    return returning.toCharArray();
   }
 
   private char getAminoAcid(String codon)

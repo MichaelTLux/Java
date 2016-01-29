@@ -12,13 +12,13 @@ public class Sequence
   {
     if (sarr==null)
     {
-    	throw new IllegalArgumentException("Invalid sequence letter for class edu.iastate.cs228.hw1.Sequence");
+    	throw new IllegalArgumentException("Invalid sequence letter for " + getClass());
     }
     for (int i=0; i<sarr.length; i=i+1)
     {
     	if (!isValidLetter(sarr[i]))
     	{
-    		throw new IllegalArgumentException("Invalid sequence letter for class edu.iastate.cs228.hw1.Sequence");
+    		throw new IllegalArgumentException("Invalid sequence letter for "+ getClass());
     	}
     }
     String copy="";
@@ -51,7 +51,19 @@ public class Sequence
 
   public String toString()
   {
-    return seqarr.toString();
+	if (seqarr==null || seqarr.length==0)
+	{
+		return "()";
+	}
+    String returning="";
+    returning=returning+"(";
+    for (int i=0; i<seqarr.length-1;i=i+1)
+    {
+    	returning=returning+seqarr[i]+ ", ";
+    	
+    }
+    returning=returning+seqarr[seqarr.length-1]+")";
+    return returning;
   }
 
   public boolean equals(Object obj)

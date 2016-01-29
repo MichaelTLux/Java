@@ -2,9 +2,12 @@ package edu.iastate.cs228.hw1;
 
 import static org.junit.Assert.*;
 
+import org.junit.Test;
+
 public class ProteinSequenceTest 
 {
 	//bjouxz
+	@Test
 	public void ProteinSequenceConstructorWorks()
 	 {
 		String message="Does it construct?";
@@ -12,7 +15,7 @@ public class ProteinSequenceTest
 		ProteinSequence s= new ProteinSequence(charA);
 		assertEquals(message, s, s);
 	 }
-	
+	@Test
 	public void ProteinSequenceIsValidCharacter1()
 	 {
 		boolean flag=false;
@@ -28,7 +31,7 @@ public class ProteinSequenceTest
 		}
 		assertEquals(message, false, flag);
 	 }
-	
+	@Test
 	public void ProteinSequenceIsValidCharacter2()
 	 {
 		boolean flag=false;
@@ -44,7 +47,7 @@ public class ProteinSequenceTest
 		}
 		assertEquals(message, false, flag);
 	 }
-	
+	@Test
 	public void ProteinSequenceIsValidCharacter3()
 	 {
 		boolean flag=false;
@@ -62,7 +65,7 @@ public class ProteinSequenceTest
 		if (s==null);
 		assertEquals(message, true, flag);
 	 }
-	
+	@Test
 	public void ProteinSequenceIsValidCharacter4()
 	 {
 		boolean flag=false;
@@ -80,7 +83,7 @@ public class ProteinSequenceTest
 		if (s==null);
 		assertEquals(message, true, flag);
 	 }
-	
+	@Test
 	public void ProteinSequenceIsValidCharacter5()
 	 {
 		boolean flag=false;
@@ -98,7 +101,7 @@ public class ProteinSequenceTest
 		if (s==null);
 		assertEquals(message, true, flag);
 	 }
-	
+	@Test
 	public void ProteinSequenceSeqLength1()
 	 {
 		String message=" will be 8";
@@ -107,7 +110,7 @@ public class ProteinSequenceTest
 		int total=s.seqLength();
 		assertEquals(message, 8, total);
 	 }
-	
+	@Test
 	public void ProteinSequenceSeqLength2()
 	 {
 		String message="nothing should be 0";
@@ -116,32 +119,50 @@ public class ProteinSequenceTest
 		int total=s.seqLength();
 		assertEquals(message, 0, total);
 	 }
-	
+	@Test
 	public void ProteinSequenceSeqChar1()
 	 {
 		String message="nothing should return nothing";
 		char[] charA={};
 		ProteinSequence s= new ProteinSequence(charA);
 		char[] total=s.getSeq();
-		assertEquals(message, charA, total);
+		boolean flag=true;
+		for (int i=0; i<s.seqLength(); i++)
+		{
+			if (!(charA[i]==total[i]))
+			{
+				flag=false;
+			}
+		}
+		
+		assertEquals(message, true, flag);
 	 }
-	
+	@Test
 	public void ProteinSequenceSeqChar2()
 	 {
 		String message="'a','c','d','e','f','g', 'h','i' should return 'a','c','d','e','f','g', 'h','i'";
 		char[] charA={'a','c','d','e','f','g', 'h','i'};
 		ProteinSequence s= new ProteinSequence(charA);
 		char[] total=s.getSeq();
-		assertEquals(message, charA, total);
+		boolean flag=true;
+		for (int i=0; i<s.seqLength(); i++)
+		{
+			if (!(charA[i]==total[i]))
+			{
+				flag=false;
+			}
+		}
+		
+		assertEquals(message, true, flag);
 	 }
-	
+	@Test
 	public void ProteinSequenceToString()
 	{
 		char[] charA={'a','c','d','e','f','g', 'h','i'};
 		ProteinSequence s= new ProteinSequence(charA);
 		System.out.println(	s.toString());
 	}
-	
+	@Test
 	public void ProteinSequenceEquals1()
 	{
 		String message="two same arrays should be equal";
@@ -151,7 +172,7 @@ public class ProteinSequenceTest
 		ProteinSequence b=new ProteinSequence(charb);
 		assertEquals(message, true, a.equals(b));
 	}
-	
+	@Test
 	public void ProteinSequenceEquals2()
 	{
 		String message="two different arrays should not be equal";
@@ -161,7 +182,7 @@ public class ProteinSequenceTest
 		ProteinSequence b=new ProteinSequence(charb);
 		assertEquals(message, false, a.equals(b));
 	}
-	
+	@Test
 	public void ProteinSequenceEquals3()
 	{
 		String message="an empty array shouldnt equal a full one";
@@ -171,7 +192,7 @@ public class ProteinSequenceTest
 		ProteinSequence b=new ProteinSequence(charb);
 		assertEquals(message, false, a.equals(b));
 	}
-	
+	@Test
 	public void ProteinSequenceEquals4()
 	{
 		String message="Any object should be able to go through";

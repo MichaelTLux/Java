@@ -13,7 +13,7 @@ public class DNASequence extends Sequence
 	    {
 	    	if (!(isValidLetter(dnaarr[i])|| super.isValidLetter(dnaarr[i])))
 	    	{
-	    		throw new IllegalArgumentException("Invalid sequence letter for class edu.iastate.cs228.hw1.DNASequence");
+	    		throw new IllegalArgumentException("Invalid sequence letter for " + getClass());
 	    	}
 	    }
 	    String copy="";
