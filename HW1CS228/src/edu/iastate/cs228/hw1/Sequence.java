@@ -1,13 +1,27 @@
 package edu.iastate.cs228.hw1;
 
-/*
- * @author
-*/
+/**
+ * This class holds the basic data for making and using a sequence of only letters.
+ * This includes ways to get the length, how to print, returning the saved sequence
+ * and asking if the sequences are equal
+ * @author Michael Lux
+ *
+ */
 
 public class Sequence
 {
+  /**
+   * This is the stored sequence of the class
+   */
   protected char[] seqarr;
 
+  /**
+   * Constructs a new sequence by first checking that it is all letters then storing it
+   * @param sarr
+   * 	the sequence you want stored in the class
+   * @throws IllegalArgumentException
+   * 	if the sequence given is null or has characters other then letters
+   */
   public Sequence(char[] sarr) throws IllegalArgumentException
   {
     if (sarr==null)
@@ -28,7 +42,12 @@ public class Sequence
     }
     seqarr=copy.toCharArray();
   }
-
+  
+  /**
+   * Returns the length of the stored sequence
+   * @return
+   * The length of the stored sequence
+   */
   public int seqLength()
   {
     //ask if 0 or negative one
@@ -39,6 +58,11 @@ public class Sequence
     return seqarr.length;
   }
   
+  /**
+   * Returns the stored sequence
+   * @return
+   * the stored sequence
+   */
   public char[] getSeq()
   {
 	  String copy="";
@@ -49,6 +73,9 @@ public class Sequence
 	    return copy.toCharArray();
   }
 
+  /**
+   * turns the stored sequence into an array
+   */
   public String toString()
   {
 	if (seqarr==null || seqarr.length==0)
@@ -66,6 +93,10 @@ public class Sequence
     return returning;
   }
 
+  /**
+   * Compares two objects and if they are both the same class,
+   * it will compare if they have the same sequence
+   */
   public boolean equals(Object obj)
   { 
     if (obj==this)
@@ -96,6 +127,14 @@ public class Sequence
     return true;
   }
 
+  /**
+   * Checks if the character given is valid which means it 
+   * is in the alphbet
+   * @param let
+   * 	the letter that is being checked
+   * @return
+   * 	true if valid false otherwise
+   */
   public boolean isValidLetter(char let)
   {
     return Character.isUpperCase(let) || Character.isLowerCase(let);

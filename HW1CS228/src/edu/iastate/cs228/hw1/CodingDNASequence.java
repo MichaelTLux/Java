@@ -1,11 +1,22 @@
 package edu.iastate.cs228.hw1;
 
-/*
- * @author
-*/
+/**
+ * This class allows codons to be pulled out of DNA sequences
+ * and translated into protein sequences. This class will store 
+ * a DNA sequence and check if it is valid
+ * @author Michael Lux
+ */
 
 public class CodingDNASequence extends DNASequence
 {
+  /**
+   * Creates a new DNA sequence if all the characters in an array are 
+   * 'a', -'c', 'g', or 't' and allows it to be translated to a protein sequence
+   * @param cdnaarr
+   * 	the array that will be stored in the class
+   * @throws IllegalArgumentException
+   * 	thrown if the given array does not consist of only 'a', -'c', 'g', or 't'
+   */
   public CodingDNASequence(char[] cdnaarr)
   {
 	  super(cdnaarr);
@@ -24,6 +35,12 @@ public class CodingDNASequence extends DNASequence
 	    seqarr=copy.toCharArray();
   }
 
+  /**
+   * this method checks if there is a starting codon
+   * at the beginning of the sequence which is "ATG"
+   * @return
+   * 	true if the sequence started with ATG false otherwise
+   */
   public boolean checkStartCodon()
   {
     if (seqarr.length<3)
@@ -33,6 +50,16 @@ public class CodingDNASequence extends DNASequence
     return (seqarr[0]=='a' ||seqarr[0]=='A') && (seqarr[1]=='t' ||seqarr[1]=='T') && (seqarr[2]=='g' ||seqarr[2]=='G');
   }
 
+  /**
+   * First this checks if there is a start codon and if there is not it 
+   * throws an exception. If there is a start codon, it will be translated
+   * to a protein sequence until an end sequence is found or there is 2 or one 
+   * amino acids left
+   * @return
+   * 	the translated protein sequence
+   * @throws RuntimeException
+   * 	thrown if there is not a starting codon in the sequence
+   */
   public char[] translate() throws RuntimeException
   {
     if (!checkStartCodon())
